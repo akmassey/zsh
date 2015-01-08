@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.zsh_custom
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -30,7 +31,6 @@ plugins=(git bundler brew brew-cask capistrano rbenv osx gem rails golang vundle
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-ZSH_CUSTOM=$HOME/zsh_custom
 
 # Source your Keychain.
 if [ -x /usr/local/bin/keychain ]; then

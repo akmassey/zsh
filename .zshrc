@@ -136,6 +136,9 @@ export EDITOR=/usr/bin/vim
 # used by git-latexdiff
 export PDFVIEWER=/Applications/Skim.app/Contents/MacOS/Skim
 
+# ensure HTML Tidy uses your configuration file
+export HTML_TIDY=$HOME/.tidyrc
+
 # Oh My Zsh has a function defined for R, but I would rather use that for the
 # statistical language package
 # unfunction R
@@ -265,7 +268,7 @@ sizeup () {
     esac
   done
   shift $((OPTIND-1))
- 
+
   local cmd="find . -type f ${depth}$(__sizeup_build_query $@)"
   local counter=0
   while read -r file; do
@@ -281,3 +284,20 @@ sizeup () {
   echo -e "$output"| sort -t '*' ${reverse}-nk 2 | cut -d '*' -f 1,3 | column -s '*' -t
   echo $'\e[1;33;40m'"Total: "$'\e[1;32;40m'"$(__sizeup_humanize $totalb)"$'\e[1;33;40m'" in $counter files"$'\e[0m'
 }
+
+rule () {
+  _hr=$(printf "%*s" $(tput cols)) && echo ${_hr// /${1--}}
+}
+
+## Print horizontal ruler with message
+rulem ()  {
+  if [ $# -eq 0 ]; then
+    echo "Usage: rulem MESSAGE [RULE_CHARACTER]"
+    return 1
+  fi
+  # Fill line with ruler character ($2, default "-"), reset cursor, move 2
+  # cols right, print message
+  _hr=$(printf "%*s" $(tput cols)) && echo -en ${_hr// /${2--}} && echo -e "\r\033[2C$1"
+}
+
+alias right="printf '%*s' $(tput cols)"

@@ -1,33 +1,103 @@
-# cd
-alias ..='cd ..'
+# Display aliases.  Please see this post for more information:
+# http://stackoverflow.com/questions/9299402/echo-all-aliases-in-zsh
+_-accept-line () {
+    emulate -L zsh
+    local -a WORDS
+    WORDS=( ${(z)BUFFER} )
+    # Unfortunately ${${(z)BUFFER}[1]} works only for at least two words,
+    # thus I had to use additional variable WORDS here.
+    local -r FIRSTWORD=${WORDS[1]}
+    local -r GREEN=$'\e[32m' RESET_COLORS=$'\e[0m'
+    [[ "$(whence -w $FIRSTWORD 2>/dev/null)" == "${FIRSTWORD}: alias" ]] &&
+        echo -nE $'\n'"${GREEN}Executing $(whence $FIRSTWORD)${RESET_COLORS}"
+    zle .accept-line
+}
+zle -N accept-line _-accept-line
 
-# ls
-alias ls="ls -F"
-alias l="ls -lAh"
-alias ll="ls -l"
-alias la='ls -A'
 
-# git
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gco='git checkout'
-alias gb='git branch'
-alias gs='git status'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+# aliases for custom fortune files
+alias myfortune="fortune /Users/masseya/Documents/Fortunes/akm-quotes"
+alias update-myfortune="strfile /Users/masseya/Documents/Fortunes/akm-quotes /Users/masseya/Documents/Fortunes/akm-quotes.dat"
+alias cl="clear"
 
-# rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
+alias l="ls -l"
+alias lh="ls -lh"
+alias t="todo.sh -d ~/.todo.cfg"
+alias recall="history | grep --color"
+alias pg="ps aux | grep --color"
+alias vanilla="/usr/bin/vim -u NONE -N" # alias for vim without customization
+alias map="xargs -n1"
 
-# commands starting with % for pasting from web
-alias %=' '
+# create an alias to pretty print homebrew dependencies
+alias homebrewdeps=brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done
+
+# clipboard preview
+alias cbp='pbpaste|less'
+
+# list only dotfiles
+alias l.='ls -lGd .*'
+# list only files
+alias lsf="ls -l | egrep -v '^d'"
+# list only directories
+alias lsd="ls -ld */"
+
+# use color with grep
+alias grep='grep --color=auto'
+
+# use this instead of Console.app
+alias console='tail -40 -f /var/log/system.log'
+
+# TODO: turn these into functions that can be tab-completed.
+# aliases for opening in various applications
+# alias skim="open -a Skim"
+# alias skim="/Applications/Skim.app/Contents/MacOS/Skim"
+# alias firefox="open -a Firefox"
+# alias safari="open -a Safari"
+# alias bibdesk="open -a BibDesk"
+
+# show recently modified files
+alias lt="ls -lthGr"
+
+# show / hide hidden files in the Mac OS X Finder
+alias showhidden='defaults write com.apple.finder AppleShowAllFiles True; killall Finder'
+alias hidehidden='defaults write com.apple.finder AppleShowAllFiles False; killall Finder'
+
+# open something in quick look
+alias ql="qlmanage -p &>/dev/null"
+
+# ensure downloaded attachments go to the desktop
+alias mutt='cd ~/Desktop/ && mutt'
+
+# compile LaTeX documents automatically
+alias mklatex='latexmk -bibtex -pdf -pvc'
+alias mkxetex='latexmk -xelatex -synctex=1 -pvc'
+alias rmtexmk='latexmk -c && rmtex'
+
+# alias enscript, mostly so that I can remember the options
+alias enscript='akm-enscript'
+
+# open current directory in Finder
+alias f='open -a Finder ./'
+
+# identify 10 largest files in current directory
+alias ducks='du -cks *|sort -rn|head -11'
+
+# echos path items one line at a time.
+alias epath="echo $PATH | tr ':' '\n'"
+
+# Quick way to rebuild the Launch Services database and get rid of duplicates
+# in the Open With submenu.
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+# quickly grep for TODO, FIXME, etc...
+alias todo='grep -r -n -e TODO -e FIXME -e XXX -e OPTIMIZE -e AKM'
+
+# create an alias for wget to use curl
+alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
+
+
+# Faster Navigation with Marks, achieved through zsh "jump" plugin
+# http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
+alias j='jump'
+
+

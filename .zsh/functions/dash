@@ -1,0 +1,5 @@
+# Simple function for looking up documentation in Dash
+function dash() {
+  open "dash://$1"
+}
+

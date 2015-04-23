@@ -1,0 +1,2 @@
+# requires the oh-my-zsh vundle plugin
+vundle-update && vundle-clean

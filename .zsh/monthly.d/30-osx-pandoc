@@ -1,0 +1,2 @@
+echo "You should manually check pandoc version for available update at https://github.com/jgm/pandoc/releases"
+pandoc --version

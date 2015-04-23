@@ -1,0 +1,7 @@
+echo "Updating zsh environment"
+pushd . > /dev/null
+
+cd $HOME/dotfiles/zsh
+git pull
+
+popd > /dev/null

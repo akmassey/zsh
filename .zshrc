@@ -32,39 +32,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# Starting to find auto correct rather annoying...
+unsetopt correct_all
+
+source ~/.zsh/init
+
 # Source your Keychain.
 if [ -x /usr/local/bin/keychain ]; then
   eval "$(keychain ~/.ssh/id_rsa)"
 fi
 
-
-# Starting to find auto correct rather annoying...
-unsetopt correct_all
-
-source ~/.zsh/aliases
-source ~/.zsh/functions/*
-
+# Print a quote
 myfortune
-
-export EDITOR=/usr/bin/vim
-
-# used by git-latexdiff
-export PDFVIEWER=/Applications/Skim.app/Contents/MacOS/Skim
-
-# ensure HTML Tidy uses your configuration file
-export HTML_TIDY=$HOME/.tidyrc
-
-# rbenv configuration
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export RBENV_ROOT=/usr/local/opt/rbenv
-
-# Settings for Go Programming
-# http://stackoverflow.com/questions/12843063/install-go-with-brew-and-running-the-gotour
-#export GOVERSION="1.1.2"
-#export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION
-#export GOPATH=$(brew --prefix)/Cellar/go/$GOVERSION/bin:$HOME/src/go
-export GOPATH=$HOME/src/go
-
-# ensure Homebrew is in your PATH
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH
-

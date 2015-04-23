@@ -1,0 +1,129 @@
+#!/usr/bin/env zsh
+# normally sourced. marked as executable for testing
+
+function run_scripts {
+
+  local dir=$1
+  local os=$2
+  local base=""
+  local tmp=""
+  local target="#"
+
+    if [ -d "$dir" ] && [ ! -z "$(ls "$dir"/)" ]; then
+         for file in "$dir"/*; do
+            base=${file##*/}
+            tmp=${base#*-}
+            target=${tmp%%-*}
+
+            # skip improperly formated files, like README.
+            if [[ "$target" != "$base"  ]]; then
+
+                if [[ "$target" == "all" ]] || [[ "$target" == "$os" ]] || [[ "$target" == "$HOSTNAME" ]]; then
+                    source "$file"
+                fi
+            fi
+        done
+    fi
+}
+
+# writes the 4 time values out to the last_init file
+function write_times {
+
+    echo "$2" >  "$1"
+    echo "$3" >> "$1"
+    echo "$4" >> "$1"
+    echo "$5" >> "$1"
+}
+
+function run_timed_scripts {
+
+    local os=$1
+
+    # timed scripts cannot overlap. note that there is a small risk from a race condition here
+    declare -r lock_file="startup.lock"
+
+    trap "{ rm -f lock_file }" SIGINT SIGTERM
+
+    if [ ! -f "$lock_file" ]; then
+
+        touch "$lock_file"
+
+        # get the last bash startup time and update file to current time
+        declare -r curr_time=`date -j +%s`
+        declare -r last_file="last_init"
+
+        local last_run="0"
+        local last_weekly="0"
+        local last_monthly="0"
+
+        declare -r dinterval=$(( 24 * 60 * 60 ))
+        declare -r winterval=$(( dinterval * 7 ))
+        declare -r minterval=$(( winterval * 4 ))
+
+        if [ -f "$last_file" ]; then
+            set -- $(<"$last_file")
+            last_run="$1"
+            last_daily="$2"
+            last_weekly="$3"
+            last_monthly="$4"
+        fi
+
+        last_run="$curr_time"
+
+        # check for new day
+        if (( curr_time - last_daily > dinterval )); then
+            echo "** Running daily scripts **"
+            last_daily="$curr_time"
+            run_scripts "daily.d" "$os"
+        fi
+
+        # check for new week
+        if (( curr_time - last_weekly > winterval )); then
+            echo "** Running weekly scripts **"
+            last_weekly="$curr_time"
+            run_scripts "weekly.d" "$os"
+        fi
+
+        # check for new month
+        if (( curr_time - last_monthly > minterval )); then
+            echo "** Running montly scripts **"
+            last_monthly="$curr_time"
+            run_scripts "monthly.d" "$os"
+        fi
+
+        write_times "$last_file" "$last_run" "$last_daily" "$last_weekly" "$last_monthly"
+        rm "$lock_file"
+    else
+        echo "Another startup detected, skipping timed scripts"
+    fi
+}
+
+# save off the current directory
+pushd . > /dev/null
+cd  $HOME/.zsh
+
+# set env vars for script selection
+export OS=`uname -s`
+export ARCH=`uname -m`
+
+# get abreviated os name for script matches
+abrevOS="unknown"
+case $OS in
+    "Darwin")
+        abrevOS="osx";;
+    "Linux")
+        abrevOS="lnx";;
+    "FreeBSD")
+        abrevOS="bsd";;
+    "Minux")
+        abrevOS="mnx";;
+esac
+
+# source the run-always modular startup scripts
+run_scripts "always.d" "$abrevOS"
+
+# finaly, source the conditionally, timed scripts (i.e. daily, weekly, monthly)
+run_timed_scripts "$abrevOS"
+
+# restore the original directory
+popd > /dev/null

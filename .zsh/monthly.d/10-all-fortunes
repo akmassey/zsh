@@ -1,0 +1,7 @@
+echo "Updating fortunes"
+pushd . > /dev/null
+
+cd $HOME/Documents/Fortunes
+git pull origin master
+
+popd > /dev/null

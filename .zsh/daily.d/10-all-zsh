@@ -4,4 +4,6 @@ pushd . > /dev/null
 cd $HOME/dotfiles/zsh
 git pull
 
+stow --restow --ignore "README.md|LICENSE.md" --dir=$HOME/dotfiles --target=$HOME zsh
+
 popd > /dev/null

@@ -100,4 +100,7 @@ alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 alias j='jump'
 
+# Alias for the eg tool, which is like man, but a little bit more practical.
+# More info: https://github.com/srsudar/eg
+alias woman='eg'
 

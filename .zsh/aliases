@@ -95,7 +95,6 @@ alias todo='grep -r -n -e TODO -e FIXME -e XXX -e OPTIMIZE -e AKM'
 # create an alias for wget to use curl
 alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
 
-
 # Faster Navigation with Marks, achieved through zsh "jump" plugin
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 alias j='jump'
@@ -103,4 +102,7 @@ alias j='jump'
 # Alias for the eg tool, which is like man, but a little bit more practical.
 # More info: https://github.com/srsudar/eg
 alias woman='eg'
+
+alias reset='source ~/.zshrc'
+
 

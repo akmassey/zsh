@@ -103,6 +103,6 @@ alias j='jump'
 # More info: https://github.com/srsudar/eg
 alias woman='eg'
 
-alias reset='source ~/.zshrc'
+alias reload='source ~/.zshrc'
 
 

@@ -9,3 +9,8 @@ if [ -d "$HOME/.rbenv" ]; then
 
     popd > /dev/null
 fi
+
+if [ -x check-gems ]; then
+    check-gems -i
+fi
+

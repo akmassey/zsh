@@ -1,14 +1,14 @@
 
-if [ -d "$HOME/.rbenv" ]; then
-    pushd . > /dev/null
-
-    cd ~/.rbenv
-    git pull
-    cd ~/.rbenv/plugins/ruby-build
-    git pull
-
-    popd > /dev/null
-fi
+# if [ -d "$HOME/.rbenv" ]; then
+#     pushd . > /dev/null
+# 
+#     cd ~/.rbenv
+#     git pull
+#     cd ~/.rbenv/plugins/ruby-build
+#     git pull
+# 
+#     popd > /dev/null
+# fi
 
 if [ -x check-gems ]; then
     check-gems -i

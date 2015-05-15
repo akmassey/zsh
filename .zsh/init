@@ -74,21 +74,21 @@ function run_timed_scripts {
         if (( curr_time - last_daily > dinterval )); then
             echo "** Running daily scripts **"
             last_daily="$curr_time"
-            run_scripts "daily.d" "$os"
+            run_scripts "daily" "$os"
         fi
 
         # check for new week
         if (( curr_time - last_weekly > winterval )); then
             echo "** Running weekly scripts **"
             last_weekly="$curr_time"
-            run_scripts "weekly.d" "$os"
+            run_scripts "weekly" "$os"
         fi
 
         # check for new month
         if (( curr_time - last_monthly > minterval )); then
             echo "** Running montly scripts **"
             last_monthly="$curr_time"
-            run_scripts "monthly.d" "$os"
+            run_scripts "monthly" "$os"
         fi
 
         write_times "$last_file" "$last_run" "$last_daily" "$last_weekly" "$last_monthly"
@@ -120,7 +120,7 @@ case $OS in
 esac
 
 # source the run-always modular startup scripts
-run_scripts "always.d" "$abrevOS"
+run_scripts "always" "$abrevOS"
 
 # finaly, source the conditionally, timed scripts (i.e. daily, weekly, monthly)
 run_timed_scripts "$abrevOS"

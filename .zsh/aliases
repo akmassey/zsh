@@ -92,9 +92,6 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 # quickly grep for TODO, FIXME, etc...
 alias todo='grep -r -n -e TODO -e FIXME -e XXX -e OPTIMIZE -e AKM'
 
-# create an alias for wget to use curl
-alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
-
 # Faster Navigation with Marks, achieved through zsh "jump" plugin
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 alias j='jump'
@@ -105,4 +102,11 @@ alias woman='eg'
 
 alias reload='source ~/.zshrc'
 
+# check which headers are supported for a website
+alias header='curl -I'
 
+# find out if remote server supports gzip / mod_deflate or not #
+alias headerc='curl -I --compress'
+
+# resume wget by default
+alias wget='wget -c'

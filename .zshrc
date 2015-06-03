@@ -26,7 +26,7 @@ ZSH_THEME="akmassey"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler brew brew-cask capistrano jump rbenv osx gem rails golang vundle z)
+plugins=(git git-extras bundler brew brew-cask capistrano jump rbenv osx gem rails golang vundle z)
 
 source $ZSH/oh-my-zsh.sh
 

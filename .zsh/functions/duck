@@ -1,0 +1,10 @@
+# URL encode something and print it.
+function url-encode; {
+        setopt extendedglob
+        echo "${${(j: :)@}//(#b)(?)/%$[[##16]##${match[1]}]}"
+}
+
+# Search DuckDuckGo for the given keywords.
+function duck; {
+        open "https://duckduckgo.com/?q=`url-encode "${(j: :)@}"`"
+}

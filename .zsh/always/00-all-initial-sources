@@ -27,3 +27,5 @@ export GOPATH=$HOME/src/go
 # ensure Homebrew is in your PATH
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH
 
+# load private configuration
+source ~/.private/*

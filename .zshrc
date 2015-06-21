@@ -44,3 +44,6 @@ source ~/.zsh/init
 
 # Print a quote
 myfortune
+
+# Weather and stock quotes from http://motd.sh/
+if [[ -e $HOME/.motd ]]; then cat $HOME/.motd; fi

@@ -26,7 +26,12 @@ ZSH_THEME="akmassey"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras bundler brew brew-cask capistrano jump rbenv osx gem rails golang vundle z)
+plugins=(git git-extras bundler brew brew-cask capistrano jump rbenv osx gem rails golang vundle z gpg-agent)
+
+# source your keychain prior to gpg-agent, which is done through a plugin
+if [ -x /usr/local/bin/keychain ]; then
+  eval "$(keychain ~/.ssh/id_rsa)"
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,11 +41,6 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 source ~/.zsh/init
-
-# Source your Keychain.
-if [ -x /usr/local/bin/keychain ]; then
-  eval "$(keychain ~/.ssh/id_rsa)"
-fi
 
 # Print a quote
 myfortune

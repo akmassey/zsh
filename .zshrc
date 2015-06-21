@@ -42,8 +42,11 @@ unsetopt correct_all
 
 source ~/.zsh/init
 
+# Weather and stock quotes from http://motd.sh/
+if [[ -e $HOME/.motd ]]; then cat $HOME/.motd; fi
+
+echo ""
+
 # Print a quote
 myfortune
 
-# Weather and stock quotes from http://motd.sh/
-if [[ -e $HOME/.motd ]]; then cat $HOME/.motd; fi

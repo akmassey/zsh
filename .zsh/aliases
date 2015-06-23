@@ -22,7 +22,7 @@ alias cl="clear"
 
 alias l="ls -l"
 alias lh="ls -lh"
-alias t="todo.sh -d ~/.todo.cfg"
+alias t="todo.sh"
 alias recall="history | grep --color"
 alias pg="ps aux | grep --color"
 alias vanilla="/usr/bin/vim -u NONE -N" # alias for vim without customization

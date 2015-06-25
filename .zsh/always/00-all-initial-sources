@@ -5,7 +5,7 @@ if [ -f ~/.zsh/aliases ]; then source ~/.zsh/aliases; fi
 source ~/.zsh/functions/*
 
 # set your editor
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 
 # used by git-latexdiff
 export PDFVIEWER=/Applications/Skim.app/Contents/MacOS/Skim

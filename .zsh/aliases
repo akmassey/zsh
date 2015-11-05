@@ -17,7 +17,8 @@ zle -N accept-line _-accept-line
 
 # aliases for custom fortune files
 alias myfortune="fortune /Users/masseya/Documents/Fortunes/akm-quotes"
-alias update-myfortune="strfile /Users/masseya/Documents/Fortunes/akm-quotes /Users/masseya/Documents/Fortunes/akm-quotes.dat"
+# removing the next one in favor of my update-myfortune ruby script
+# alias update-myfortune="strfile /Users/masseya/Documents/Fortunes/akm-quotes /Users/masseya/Documents/Fortunes/akm-quotes.dat"
 alias cl="clear"
 
 alias l="ls -l"

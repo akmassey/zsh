@@ -3,6 +3,8 @@
 
 zmodload zsh/datetime
 
+# TODO: figure out how to turn these into variables
+
 # typeset -r last_daily
 # typeset -r last_weekly
 # typeset -r last_monthly

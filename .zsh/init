@@ -1,7 +1,35 @@
 #!/usr/bin/env zsh
 # normally sourced. marked as executable for testing
 
-function run_scripts {
+zmodload zsh/datetime
+
+# typeset -r last_daily
+# typeset -r last_weekly
+# typeset -r last_monthly
+# typeset -r last_init
+
+# last_daily='last_daily'
+# last_weekly='last_weekly'
+# last_monthly='last_monthly'
+# last_init='last_init'
+
+function _current_epoch() {
+  echo $(( $EPOCHSECONDS / 60 / 60 / 24 ))
+}
+
+function _update_last_daily() {
+  echo "DAILY=$(_current_epoch)" >! "last_daily"
+}
+
+function _update_last_weekly() {
+  echo "WEEKLY=$(_current_epoch)" >! "last_weekly"
+}
+
+function _update_last_monthly() {
+  echo "MONTHLY=$(_current_epoch)" >! "last_monthly"
+}
+
+function _run_scripts() {
 
   local dir=$1
   local os=$2
@@ -9,93 +37,148 @@ function run_scripts {
   local tmp=""
   local target="#"
 
+  if [ -d "$dir" ] && [ ! -z "$(ls "$dir"/)" ]; then
+    for file in "$dir"/*; do
+      base=${file##*/}
+      tmp=${base#*-}
+      target=${tmp%%-*}
+
+      # skip improperly formated files, like README.
+      if [[ "$target" != "$base"  ]]; then
+
+        if [[ "$target" == "all" ]] ||
+           [[ "$target" == "$os" ]] ||
+           [[ "$target" == "$HOSTNAME" ]]; then
+          source "$file"
+        fi
+      fi
+    done
+  fi
+}
+
+# _run_locked_scripts is used for daily, weekly, and monthly scripts.  We use
+# a lock here because these will likely take some time to execute, but there
+# is still a chance of a race condition.  (Though, it is extremely unlikely
+# since these scripts don't run without a user response to a prompt.
+function _run_locked_scripts() {
+
+  local dir=$1
+  local os=$2
+  local base=""
+  local tmp=""
+  local target="#"
+
+  # timed scripts cannot overlap. note that there is a small risk from a
+  # race condition here
+  declare -r lock_file="startup.lock"
+
+  trap "{ rm -f lock_file }" SIGINT SIGTERM
+
+  if [ ! -f "$lock_file" ]; then
+
+    touch "$lock_file"
+
+    echo "** Running $dir scripts **"
+
     if [ -d "$dir" ] && [ ! -z "$(ls "$dir"/)" ]; then
-         for file in "$dir"/*; do
-            base=${file##*/}
-            tmp=${base#*-}
-            target=${tmp%%-*}
+      for file in "$dir"/*; do
+        base=${file##*/}
+        tmp=${base#*-}
+        target=${tmp%%-*}
 
-            # skip improperly formated files, like README.
-            if [[ "$target" != "$base"  ]]; then
+        # skip improperly formated files, like README.
+        if [[ "$target" != "$base"  ]]; then
 
-                if [[ "$target" == "all" ]] || [[ "$target" == "$os" ]] || [[ "$target" == "$HOSTNAME" ]]; then
-                    source "$file"
-                fi
-            fi
-        done
+          if [[ "$target" == "all" ]] ||
+             [[ "$target" == "$os" ]] ||
+             [[ "$target" == "$HOSTNAME" ]]; then
+            source "$file"
+          fi
+        fi
+      done
     fi
+    rm "$lock_file"
+  else
+    echo "Another startup detected.  Skipping this run."
+  fi
 }
 
-# writes the 4 time values out to the last_init file
-function write_times {
+# Prompt for dailies and run them
+function _prompt_for_dailies() {
+  local os=$1
 
-    echo "$2" >  "$1"
-    echo "$3" >> "$1"
-    echo "$4" >> "$1"
-    echo "$5" >> "$1"
+  if [ -f "last_daily" ]
+  then
+    source "last_daily"
+
+    # if last_daily was empty, update it
+    if [[ -z "$DAILY" ]]; then
+      _update_last_daily && return 0;
+    fi
+
+    epoch_diff=$(($(_current_epoch) - $DAILY))
+    if [ $epoch_diff -gt 1 ]
+    then
+      echo "[DAILY] Would you like to run your daily updates? [Y/n]: \c"
+      read line
+      if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+        _run_locked_scripts "daily" "$os"
+      fi
+    fi
+  fi
+  _update_last_daily
 }
 
-function run_timed_scripts {
+# Prompt for weeklies and run them
+function _prompt_for_weeklies() {
+  local os=$1
 
-    local os=$1
+  if [ -f "last_weekly" ]
+  then
+    source "last_weekly"
 
-    # timed scripts cannot overlap. note that there is a small risk from a race condition here
-    declare -r lock_file="startup.lock"
-
-    trap "{ rm -f lock_file }" SIGINT SIGTERM
-
-    if [ ! -f "$lock_file" ]; then
-
-        touch "$lock_file"
-
-        # get the last bash startup time and update file to current time
-        declare -r curr_time=`date -j +%s`
-        declare -r last_file="last_init"
-
-        local last_run="0"
-        local last_weekly="0"
-        local last_monthly="0"
-
-        declare -r dinterval=$(( 24 * 60 * 60 ))
-        declare -r winterval=$(( dinterval * 7 ))
-        declare -r minterval=$(( winterval * 4 ))
-
-        if [ -f "$last_file" ]; then
-            set -- $(<"$last_file")
-            last_run="$1"
-            last_daily="$2"
-            last_weekly="$3"
-            last_monthly="$4"
-        fi
-
-        last_run="$curr_time"
-
-        # check for new day
-        if (( curr_time - last_daily > dinterval )); then
-            echo "** Running daily scripts **"
-            last_daily="$curr_time"
-            run_scripts "daily" "$os"
-        fi
-
-        # check for new week
-        if (( curr_time - last_weekly > winterval )); then
-            echo "** Running weekly scripts **"
-            last_weekly="$curr_time"
-            run_scripts "weekly" "$os"
-        fi
-
-        # check for new month
-        if (( curr_time - last_monthly > minterval )); then
-            echo "** Running montly scripts **"
-            last_monthly="$curr_time"
-            run_scripts "monthly" "$os"
-        fi
-
-        write_times "$last_file" "$last_run" "$last_daily" "$last_weekly" "$last_monthly"
-        rm "$lock_file"
-    else
-        echo "Another startup detected, skipping timed scripts"
+    # if $last_daily was empty, update it
+    if [[ -z "$WEEKLY" ]]; then
+      _update_last_weekly && return 0;
     fi
+
+    epoch_diff=$(($(_current_epoch) - $WEEKLY))
+    if [ $epoch_diff -gt 1 ]
+    then
+      echo "[WEEKLY] Would you like to run your weekly updates? [Y/n]: \c"
+      read line
+      if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+        _run_locked_scripts "weekly" "$os"
+      fi
+    fi
+  fi
+  _update_last_weekly
+}
+
+# Prompt for monthlies and run them
+function _prompt_for_monthlies() {
+  local os=$1
+
+  if [ -f "last_monthly" ]
+  then
+    source "last_monthly"
+
+    # if $last_daily was empty, update it
+    if [[ -z "$MONTHLY" ]]; then
+      _update_last_monthly && return 0;
+    fi
+
+    epoch_diff=$(($(_current_epoch) - $MONTHLY))
+    if [ $epoch_diff -gt 1 ]
+    then
+      echo "[MONTHLY] Would you like to run your monthly updates? [Y/n]: \c"
+      read line
+      if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+        _run_locked_scripts "monthly" "$os"
+      fi
+    fi
+  fi
+  _update_last_monthly
 }
 
 # save off the current directory
@@ -120,10 +203,24 @@ case $OS in
 esac
 
 # source the run-always modular startup scripts
-run_scripts "always" "$abrevOS"
+_run_scripts "always" "$abrevOS"
 
-# finaly, source the conditionally, timed scripts (i.e. daily, weekly, monthly)
-run_timed_scripts "$abrevOS"
+# cancel upgrade if the current user doesn't have write permissions for the
+# current directory.
+[[ -w "$(pwd)" ]] || return 0
+
+# cancel upgrade if these tools are unavailable on the system
+# TODO: It would be ideal to print an error message here
+whence git >/dev/null || return 0
+whence brew >/dev/null || return 0
+whence pandoc >/dev/null || return 0
+whence tlmgr >/dev/null || return 0
+whence vim >/dev/null || return 0
+
+# run daily, weekly, and monthly scripts based on a prompt
+_prompt_for_dailies "$abrevOS"
+_prompt_for_weeklies "$abrevOS"
+_prompt_for_monthlies "$abrevOS"
 
 # restore the original directory
 popd > /dev/null

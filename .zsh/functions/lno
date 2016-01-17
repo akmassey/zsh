@@ -1,9 +1,8 @@
 # output a text file with line numbers
 #     http://brettterpstra.com/2015/11/24/shell-tricks-quick-line-numbering/
-function lno; {
-    if [ $# -eq 0 ]; then
-        echo "No filename provided."
-    else
-        sed = "$1" | paste -s -d '\t\n' - -
-    fi
-}
+
+if [ $# -eq 0 ]; then
+  echo "No filename provided."
+else
+  sed = "$1" | paste -s -d '\t\n' - -
+fi

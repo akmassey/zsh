@@ -34,8 +34,16 @@ if [ -x /usr/local/bin/keychain ]; then
   eval "$(keychain ~/.ssh/id_rsa)"
 fi
 
-# fpath=($HOME/.zsh/functions $fpath)
-# autoload lno
+fpath=( $HOME/.zsh/functions "${fpath[@]}" )
+autoload -Uz duck
+autoload -Uz cdf
+autoload -Uz lno
+autoload -Uz loop
+autoload -Uz mcd
+autoload -Uz rule
+autoload -Uz rulem
+autoload -Uz right
+autoload -Uz sizeup
 
 source $ZSH/oh-my-zsh.sh
 

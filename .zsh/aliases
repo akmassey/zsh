@@ -111,3 +111,6 @@ alias headerc='curl -I --compress'
 
 # resume wget by default
 alias wget='wget -c'
+
+# print a right-aligned message
+alias right="printf '%*s' $(tput cols)"

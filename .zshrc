@@ -61,9 +61,10 @@ source ~/.zsh/init
 if [[ -e $HOME/.weather ]]; then cat $HOME/.weather; fi
 
 # Print stock quotes
-if [[ -e $HOME/.stocks ]]; then cat $HOME/.stocks; fi
-
-echo "\n"
+if [[ -e $HOME/.stocks ]]; then
+  cat $HOME/.stocks
+  echo "\n"
+fi
 
 # Print a quote
 myfortune

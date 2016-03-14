@@ -44,6 +44,8 @@ autoload -Uz mcd
 autoload -Uz rule
 autoload -Uz rulem
 autoload -Uz sizeup
+autoload -Uz o
+autoload -Uz getcertnames
 
 source $ZSH/oh-my-zsh.sh
 

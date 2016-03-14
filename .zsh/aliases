@@ -114,3 +114,31 @@ alias wget='wget -c'
 
 # print a right-aligned message
 alias right="printf '%*s' $(tput cols)"
+
+# Several of the following are from:
+#   https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+
+# Merge PDF files
+# Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
+alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
+
+
+# Intuitive map function
+# For example, to list all directories that contain a certain file:
+# find . -name .gitattributes | map dirname
+alias map="xargs -n1"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+# OS X has no `sha1sum`, so use `shasum` as a fallback
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
+

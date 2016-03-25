@@ -7,7 +7,7 @@ update-vim-spellfile
 
 git pull origin master
 
-stow --restow --ignore "README.md|LICENSE.md" --dir=$HOME/dotfiles --target=$HOME vim
+stow --restow --ignore "README.md|LICENSE.md|.git|.gitmodules" --dir=$HOME/dotfiles --target=$HOME vim
 
 # requires the oh-my-zsh vundle plugin
 vundle-update && vundle-clean

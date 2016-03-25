@@ -1,3 +1,6 @@
 [submodule ".zsh_custom/plugins/zsh-completions"]
 	path = .zsh_custom/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
+[submodule ".zsh_custom/plugins/zsh-autosuggestions"]
+	path = .zsh_custom/plugins/zsh-autosuggestions
+	url = git://github.com/zsh-users/zsh-autosuggestions

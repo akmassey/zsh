@@ -35,6 +35,9 @@ alias homebrewdeps=brew list | while read cask; do echo -n $fg[blue] $cask $fg[w
 # clipboard preview
 alias cbp='pbpaste|less'
 
+# shortcut for the wd plugin
+alias k='wd'
+
 # list only dotfiles
 alias l.='ls -lGd .*'
 # list only files

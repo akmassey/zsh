@@ -71,3 +71,6 @@ fi
 # Print a quote
 myfortune
 
+
+export NVM_DIR="/Users/masseya/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

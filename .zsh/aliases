@@ -26,7 +26,7 @@ alias lh="ls -lh"
 alias t="todo.sh"
 alias recall="history | grep --color"
 alias pg="ps aux | grep --color"
-alias vanilla="/usr/bin/vim -u NONE -N" # alias for vim without customization
+alias vanilla="vim -u NONE -N" # alias for vim without customization
 alias map="xargs -n1"
 
 # create an alias to pretty print homebrew dependencies

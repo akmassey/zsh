@@ -40,5 +40,11 @@ command man "$@"
 }
 # export MANPAGER="env MAN_PN=1 /usr/local/bin/vim -u NONE -N -M +MANPAGER -"
 
+export NVM_DIR="/Users/masseya/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# TODO: Convert these to functions?
+source $HOME/.zsh/always/se-aliases/se-aliases.sh
+
 # load private configuration
 source ~/.private/*

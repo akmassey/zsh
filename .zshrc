@@ -56,11 +56,14 @@ unsetopt correct_all
 
 source ~/.zsh/init
 
-# Weather and stock quotes from http://motd.sh/
-# if [[ -e $HOME/.motd ]]; then cat $HOME/.motd; fi
+# remove duplicate entries from $PATH
+typeset -U PATH
 
 # Print weather information
-if [[ -e $HOME/.weather ]]; then cat $HOME/.weather; fi
+if [[ -e $HOME/.weather ]]; then
+  cat $HOME/.weather
+  echo "\n"
+fi
 
 # Print stock quotes
 if [[ -e $HOME/.stocks ]]; then
@@ -70,7 +73,3 @@ fi
 
 # Print a quote
 myfortune
-
-
-export NVM_DIR="/Users/masseya/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

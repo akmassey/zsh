@@ -32,7 +32,7 @@ autoload -U compinit && compinit
 # source your keychain prior to gpg-agent, which is done through a plugin
 if [ -x /usr/local/bin/keychain ]; then
   # for Mac OS X only
-  eval "$(keychain --eval --agents ssh --inherit any id_rsa)"
+  eval "$(keychain --eval --inherit any id_rsa)"
 fi
 
 fpath=( $HOME/.zsh/functions "${fpath[@]}" )

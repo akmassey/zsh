@@ -54,6 +54,9 @@ source $ZSH/oh-my-zsh.sh
 # Starting to find auto correct rather annoying...
 unsetopt correct_all
 
+# Load fzf configuration
+[ -f ~/.fzf.zsh ] && source ~/.zsh/fzf.zsh
+
 source ~/.zsh/init
 
 # remove duplicate entries from $PATH

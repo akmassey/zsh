@@ -38,6 +38,9 @@ alias cbp='pbpaste|less'
 # shortcut for the wd plugin
 alias k='wd'
 
+# shortcut for youtube-dl
+alias yt='youtube-dl'
+
 # list only dotfiles
 alias l.='ls -lGd .*'
 # list only files

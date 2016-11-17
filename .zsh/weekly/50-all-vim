@@ -9,7 +9,6 @@ git pull origin master
 
 stow --restow --ignore "README.md|LICENSE.md|.git|.gitmodules" --dir=$HOME/dotfiles --target=$HOME vim
 
-# requires the oh-my-zsh vundle plugin
-vundle-update && vundle-clean
+vim +PlugInstall +PlugClean +qall
 
 popd > /dev/null

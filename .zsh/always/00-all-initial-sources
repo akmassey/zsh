@@ -49,5 +49,8 @@ export NVM_DIR="/Users/masseya/.nvm"
 # TODO: Convert these to functions?
 source $HOME/.zsh/always/se-aliases/se-aliases.sh
 
+# load rust settings
+source $HOME/.cargo/env
+
 # load private configuration
 source ~/.private/*

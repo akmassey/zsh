@@ -27,7 +27,7 @@ ZSH_THEME="akmassey"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-extras bundler brew brew-cask capistrano jump rbenv osx gem rails golang gpg-agent zsh-completions jupyter-completions history-substring-search zsh-autosuggestions web-search wd fzf-z rust cargo)
-autoload -U compinit && compinit
+autoload -U compinit && compinit -D
 
 # source your keychain prior to gpg-agent, which is done through a plugin
 if [ -x /usr/local/bin/keychain ]; then

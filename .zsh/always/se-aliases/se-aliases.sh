@@ -288,12 +288,6 @@ profhacker()
 }
 
 
-google()
-{
-  seoptions "$@"
-  searchopen "https://www.google.com/search?q=$(urlencode "${@: -1}")"
-}
-
 #Christian Classics Ethereal Library
 ccel()
 {

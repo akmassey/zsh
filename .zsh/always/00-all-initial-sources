@@ -50,7 +50,11 @@ export NVM_DIR="/Users/masseya/.nvm"
 source $HOME/.zsh/always/se-aliases/se-aliases.sh
 
 # load rust settings
-source $HOME/.cargo/env
+if [ -d $HOME/.cargo ] && [ -f $HOME/.cargo/env ]; then
+  source $HOME/.cargo/env
+fi;
 
 # load private configuration
-source ~/.private/*
+if [ -d $HOME/.private ]; then
+  source ~/.private/*
+fi;

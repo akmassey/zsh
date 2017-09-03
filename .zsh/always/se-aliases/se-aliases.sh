@@ -202,12 +202,6 @@ flickr()
   searchopen "https://flickr.com/search/?q=$(urlencode "${@: -1}")&l=cc&ss=1&ct=6$(if [ -n "$newfirst" ]; then echo "&s=rec";fi)$(if [ -n "$interesting" ]; then echo "&s=int"; fi)"
 }
 
-youtube()
-{
-  seoptions "$@"
-  searchopen "https://www.youtube.com/results?search_query=$(urlencode "${@: -1}")"
-}
-
 # Note: Handbook of Texas Online uses %20 instead of + for spaces
 hotx()
 {

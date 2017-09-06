@@ -75,4 +75,6 @@ if [[ -e $HOME/.stocks ]]; then
 fi
 
 # Print a quote
-myfortune
+if type fortune > /dev/null 2>/dev/null; then
+  myfortune
+fi

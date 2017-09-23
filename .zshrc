@@ -27,6 +27,7 @@ ZSH_THEME="akmassey"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-extras bundler brew brew-cask capistrano jump rbenv osx gem rails golang gpg-agent zsh-completions jupyter-completions history-substring-search zsh-autosuggestions web-search wd fzf-z rust cargo)
+
 autoload -U compinit && compinit -D
 
 # source your keychain prior to gpg-agent, which is done through a plugin
@@ -59,8 +60,9 @@ unsetopt correct_all
 
 source ~/.zsh/init
 
-# remove duplicate entries from $PATH
+# remove duplicate entries from $PATH and $FPATH
 typeset -U PATH
+typeset -U FPATH
 
 # Print weather information
 if [[ -e $HOME/.weather ]]; then
@@ -78,3 +80,5 @@ fi
 if type fortune > /dev/null 2>/dev/null; then
   myfortune
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -14,8 +14,8 @@ export PDFVIEWER=/Applications/Skim.app/Contents/MacOS/Skim
 export HTML_TIDY=$HOME/.tidyrc
 
 # rbenv configuration
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export RBENV_ROOT=/usr/local/opt/rbenv
+if type rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Settings for Go Programming
 # http://stackoverflow.com/questions/12843063/install-go-with-brew-and-running-the-gotour

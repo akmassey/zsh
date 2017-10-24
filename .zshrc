@@ -81,4 +81,3 @@ if type fortune > /dev/null 2>/dev/null; then
   myfortune
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -20,13 +20,40 @@ if [ -f /usr/local/opt/fzf/shell/key-bindings.zsh ]; then
   source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 fi
 
+# Options to fzf command
+export FZF_COMPLETION_OPTS='+c -x'
+
 # fzf + rg configuration
 if which fzf > /dev/null 2>&1 && which rg > /dev/null 2>&1; then
-  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --no-messages --glob "!.git/*"'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_DEFAULT_OPTS='
-  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
-  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  --color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
+  --color info:183,prompt:110,spinner:107,pointer:167,marker:215
   '
+
+  # Use rg (https://github.com/BurntSushi/ripgrep) instead of the default find
+  # command for listing path candidates.
+  # - The first argument to the function is the base path to start traversal
+  # - See the source code (completion.{bash,zsh}) for the details.
+  # - rg only lists files, so we use with-dir script to augment the output
+  _fzf_compgen_path() {
+    rg --files "$1" | with-dir "$1"
+  }
+
+  # Use rg to generate the list for directory completion
+  _fzf_compgen_dir() {
+    rg --files "$1" | only-dir "$1"
+  }
 fi
+
+# # TODO: create Ctrl-P shortcut for vim
+# #     See: http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
+# function execute_nvim_through_fzf {
+#   nvim $(fzf)
+# }
+# zle -N execute_nvim_through_fzf
+# bindkey -M viins '^p' execute_nvim_through_fzf
+
+# bind -x '"\C-p": nvim $(fzf);'

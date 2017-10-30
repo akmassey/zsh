@@ -15,7 +15,9 @@ export HTML_TIDY=$HOME/.tidyrc
 
 # rbenv configuration
 export RBENV_ROOT=/usr/local/opt/rbenv
-if command rbenv; then eval "$(rbenv init -)" fi
+if command rbenv; then
+  eval "$(rbenv init -)"
+fi
 
 # Settings for Go Programming
 # http://stackoverflow.com/questions/12843063/install-go-with-brew-and-running-the-gotour
@@ -50,11 +52,8 @@ export NVM_DIR="/Users/masseya/.nvm"
 source $HOME/.zsh/always/se-aliases/se-aliases.sh
 
 # load rust settings
-if [ -d $HOME/.cargo ] && [ -f $HOME/.cargo/env ]; then
-  source $HOME/.cargo/env
-fi;
+if [ -d $HOME/.cargo ] && [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
 
 # load private configuration
-if [ -d $HOME/.private ]; then
-  source ~/.private/*
-fi;
+if [ -d $HOME/.private ]; then source ~/.private/*; fi
+

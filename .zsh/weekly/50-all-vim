@@ -1,4 +1,4 @@
-echo "Updating vim and vundle configuration"
+echo "Updating vim and vim-plug configuration"
 pushd . > /dev/null
 
 cd $HOME/dotfiles/vim

@@ -1,0 +1,14 @@
+echo "Updating vim and vim-plug configuration"
+pushd . > /dev/null
+
+cd $HOME/dotfiles/vim
+
+update-vim-spellfile
+
+git pull origin master
+
+stow --restow --ignore "README.md|LICENSE.md|.git|.gitmodules" --dir=$HOME/dotfiles --target=$HOME vim
+
+vim +PlugInstall +PlugClean +qall
+
+popd > /dev/null

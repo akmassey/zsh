@@ -18,6 +18,10 @@ zle -N accept-line _-accept-line
 # unalias rails generate in favor of ripgrep
 unalias rg
 
+# aliases for time tracking
+alias ttagcat='cat ~/.ttag-logfile.txt'
+alias ttago='open ~/.ttag-logfile.txt'
+
 # aliases for custom fortune files
 alias myfortune="fortune /Users/masseya/Documents/Fortunes/akm-quotes"
 # removing the next one in favor of my update-myfortune ruby script
@@ -26,7 +30,7 @@ alias cl="clear"
 
 alias l="ls -l"
 alias lh="ls -lh"
-alias t="todo.sh"
+alias t="timetrap"
 alias recall="history | grep --color"
 alias pg="ps aux | grep --color"
 alias vim="nvim"

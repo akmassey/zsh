@@ -15,8 +15,10 @@ _-accept-line () {
 zle -N accept-line _-accept-line
 
 
+# Commenting this out because I'm not using that plugin anymore, but I am
+# leaving it in here because I may use it at some point in the future.
 # unalias rails generate in favor of ripgrep
-unalias rg
+# unalias rg
 
 # aliases for time tracking
 alias ttagcat='cat ~/.ttag-logfile.txt'

@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
-# normally sourced. marked as executable for testing
+#
+# Usually, this file is sourced by ~/.zshrc, but it is also marked as
+# executable for testing.
 
 zmodload zsh/datetime
 
@@ -13,22 +15,27 @@ zmodload zsh/datetime
 # last_daily='last_daily'
 # last_weekly='last_weekly'
 # last_monthly='last_monthly'
-# last_init='last_init'
+last_update='last_update'
+last_init='last_init'
 
 function _current_epoch() {
   echo $(( $EPOCHSECONDS / 60 / 60 / 24 ))
 }
 
-function _update_last_daily() {
-  echo "DAILY=$(_current_epoch)" >! "last_daily"
-}
+# function _update_last_daily() {
+#   echo "DAILY=$(_current_epoch)" >! "last_daily"
+# }
 
-function _update_last_weekly() {
-  echo "WEEKLY=$(_current_epoch)" >! "last_weekly"
-}
+# function _update_last_weekly() {
+#   echo "WEEKLY=$(_current_epoch)" >! "last_weekly"
+# }
 
-function _update_last_monthly() {
-  echo "MONTHLY=$(_current_epoch)" >! "last_monthly"
+# function _update_last_monthly() {
+#   echo "MONTHLY=$(_current_epoch)" >! "last_monthly"
+# }
+
+function _update_last_updated() {
+  echo "UPDATED=$(_current_epoch)" >! "last_updated"
 }
 
 function _run_scripts() {
@@ -105,82 +112,108 @@ function _run_locked_scripts() {
   fi
 }
 
-# Prompt for dailies and run them
-function _prompt_for_dailies() {
+# # Prompt for dailies and run them
+# function _prompt_for_dailies() {
+#   local os=$1
+
+#   if [ -f "last_daily" ]
+#   then
+#     source "last_daily"
+
+#     # if last_daily was empty, update it
+#     if [[ -z "$DAILY" ]]; then
+#       _update_last_daily && return 0;
+#     fi
+
+#     epoch_diff=$(($(_current_epoch) - $DAILY))
+#     if [ $epoch_diff -gt 1 ]
+#     then
+#       echo "[DAILY] Would you like to run your daily updates? [Y/n]: \c"
+#       read line
+#       if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+#         _run_locked_scripts "daily" "$os"
+#       fi
+#     fi
+#   fi
+#   _update_last_daily
+# }
+
+# # Prompt for weeklies and run them
+# function _prompt_for_weeklies() {
+#   local os=$1
+
+#   if [ -f "last_weekly" ]
+#   then
+#     source "last_weekly"
+
+#     # if $last_daily was empty, update it
+#     if [[ -z "$WEEKLY" ]]; then
+#       _update_last_weekly && return 0;
+#     fi
+
+#     epoch_diff=$(($(_current_epoch) - $WEEKLY))
+#     if [ $epoch_diff -gt 1 ]
+#     then
+#       echo "[WEEKLY] Would you like to run your weekly updates? [Y/n]: \c"
+#       read line
+#       if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+#         _run_locked_scripts "weekly" "$os"
+#       fi
+#     fi
+#   fi
+#   _update_last_weekly
+# }
+
+# # Prompt for monthlies and run them
+# function _prompt_for_monthlies() {
+#   local os=$1
+
+#   if [ -f "last_monthly" ]
+#   then
+#     source "last_monthly"
+
+#     # if $last_monthly was empty, update it
+#     if [[ -z "$MONTHLY" ]]; then
+#       _update_last_monthly && return 0;
+#     fi
+
+#     epoch_diff=$(($(_current_epoch) - $MONTHLY))
+#     if [ $epoch_diff -gt 1 ]
+#     then
+#       echo "[MONTHLY] Would you like to run your monthly updates? [Y/n]: \c"
+#       read line
+#       if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+#         _run_locked_scripts "monthly" "$os"
+#       fi
+#     fi
+#   fi
+#   _update_last_monthly
+# }
+
+# Prompt for updates and run them
+function _prompt_for_updates() {
   local os=$1
 
-  if [ -f "last_daily" ]
+  if [ -f "last_update" ]
   then
-    source "last_daily"
+    source "last_update"
 
-    # if last_daily was empty, update it
-    if [[ -z "$DAILY" ]]; then
-      _update_last_daily && return 0;
+    # if $last_update was empty, update it
+    if [[ -z "$UPDATED" ]]; then
+      _update_last_updated && return 0;
     fi
 
-    epoch_diff=$(($(_current_epoch) - $DAILY))
+    epoch_diff=$(($(_current_epoch) - $UPDATED))
     if [ $epoch_diff -gt 1 ]
     then
-      echo "[DAILY] Would you like to run your daily updates? [Y/n]: \c"
+      echo "[UPDATES] Would you like to update stuff? [Y/n]: \c"
       read line
       if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-        _run_locked_scripts "daily" "$os"
+        _run_locked_scripts "update" "$os"
       fi
     fi
   fi
-  _update_last_daily
-}
-
-# Prompt for weeklies and run them
-function _prompt_for_weeklies() {
-  local os=$1
-
-  if [ -f "last_weekly" ]
-  then
-    source "last_weekly"
-
-    # if $last_daily was empty, update it
-    if [[ -z "$WEEKLY" ]]; then
-      _update_last_weekly && return 0;
-    fi
-
-    epoch_diff=$(($(_current_epoch) - $WEEKLY))
-    if [ $epoch_diff -gt 1 ]
-    then
-      echo "[WEEKLY] Would you like to run your weekly updates? [Y/n]: \c"
-      read line
-      if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-        _run_locked_scripts "weekly" "$os"
-      fi
-    fi
-  fi
-  _update_last_weekly
-}
-
-# Prompt for monthlies and run them
-function _prompt_for_monthlies() {
-  local os=$1
-
-  if [ -f "last_monthly" ]
-  then
-    source "last_monthly"
-
-    # if $last_daily was empty, update it
-    if [[ -z "$MONTHLY" ]]; then
-      _update_last_monthly && return 0;
-    fi
-
-    epoch_diff=$(($(_current_epoch) - $MONTHLY))
-    if [ $epoch_diff -gt 1 ]
-    then
-      echo "[MONTHLY] Would you like to run your monthly updates? [Y/n]: \c"
-      read line
-      if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-        _run_locked_scripts "monthly" "$os"
-      fi
-    fi
-  fi
-  _update_last_monthly
+  _update_last_updated
 }
 
 # save off the current directory
@@ -220,9 +253,10 @@ whence tlmgr >/dev/null || return 0
 whence vim >/dev/null || return 0
 
 # run daily, weekly, and monthly scripts based on a prompt
-_prompt_for_dailies "$abrevOS"
-_prompt_for_weeklies "$abrevOS"
-_prompt_for_monthlies "$abrevOS"
+# _prompt_for_dailies "$abrevOS"
+# _prompt_for_weeklies "$abrevOS"
+# _prompt_for_monthlies "$abrevOS"
+_prompt_for_updates "$abrevOS"
 
 # restore the original directory
 popd > /dev/null

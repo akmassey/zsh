@@ -27,7 +27,10 @@ fi
 export GOPATH=$HOME/src/go
 
 # ensure Homebrew is in your PATH
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"
+
+# ensure python refers to python2 rather than python3
+export PATH="/Users/masseya/python-bin:$PATH"
 
 # colorized man pages
 man () {

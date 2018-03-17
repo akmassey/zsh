@@ -21,11 +21,6 @@
 /Users/masseya/.oh-my-zsh/plugins/cargo
 /Users/masseya/.oh-my-zsh/plugins/z
 
-# zsh-users
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-history-substring-search
-zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions
 
 # other plugins
 djui/alias-tips
@@ -34,4 +29,13 @@ andrewferrier/fzf-z
 /Users/masseya/.zsh_custom/plugins/jupyter-completions
 
 # theme
-/Users/masseya/.zsh_custom/themes/akmassey.zsh-theme
+# /Users/masseya/.zsh_custom/themes/akmassey.zsh-theme
+
+
+# these should be at last!
+mafredri/zsh-async
+sindresorhus/pure
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions

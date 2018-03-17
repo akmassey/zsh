@@ -29,10 +29,10 @@ if [ -f /usr/local/share/antigen/antigen.zsh ]; then
 
   antigen bundle /Users/masseya/.zsh_custom/plugins/jupyter-completions --no-local-clone
 
+  # the order of this set of plugins is important
+  antigen bundle mafredri/zsh-async
   # antigen theme akmassey/akmassey-zsh-theme
   antigen theme sindresorhus/pure
-
-  antigen bundle mafredri/zsh-async
   antigen bundle zsh-users/zsh-syntax-highlighting
   antigen bundle zsh-users/zsh-history-substring-search
   antigen bundle zsh-users/zsh-completions

@@ -1,47 +1,32 @@
-if [ -f /usr/local/share/antigen/antigen.zsh ]; then
-  source /usr/local/share/antigen/antigen.zsh
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.zsh_custom
 
-  antigen use oh-my-zsh
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="akmassey"
+# ZSH_THEME="random"
 
-  # use these oh-my-zsh plugins
-  antigen bundle git
-  antigen bundle git-extras
-  antigen bundle wd
-  antigen bundle bundler
-  antigen bundle brew
-  antigen bundle capistrano
-  antigen bundle jump
-  antigen bundle rbenv
-  antigen bundle osx
-  antigen bundle gem
-  antigen bundle rails
-  antigen bundle golang
-  antigen bundle gpg-agent
-  antigen bundle web-search
-  antigen bundle rust
-  antigen bundle cargo
-  antigen bundle z
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-  # use these non-oh-my-zsh plugins
-  antigen bundle djui/alias-tips
-  antigen bundle srijanshetty/zsh-pandoc-completion
-  antigen bundle andrewferrier/fzf-z
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-  antigen bundle /Users/masseya/.zsh_custom/plugins/jupyter-completions --no-local-clone
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-  # the order of this set of plugins is important
-  antigen bundle mafredri/zsh-async
-  # antigen theme akmassey/akmassey-zsh-theme
-  antigen theme sindresorhus/pure
-  antigen bundle zsh-users/zsh-syntax-highlighting
-  antigen bundle zsh-users/zsh-history-substring-search
-  antigen bundle zsh-users/zsh-completions
-  antigen bundle zsh-users/zsh-autosuggestions
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-  antigen apply
-else
-  echo "Unable to find antigen, so your shell could be missing some zsh plugins."
-fi
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git git-extras bundler brew brew-cask capistrano jump rbenv osx gem rails golang gpg-agent zsh-completions jupyter-completions history-substring-search zsh-autosuggestions web-search wd fzf-z rust cargo)
 
 autoload -U compinit && compinit -D
 
@@ -62,6 +47,10 @@ autoload -Uz rulem
 autoload -Uz sizeup
 autoload -Uz o
 autoload -Uz getcertnames
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
 
 # Starting to find auto correct rather annoying...
 unsetopt correct_all

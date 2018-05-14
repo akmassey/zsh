@@ -60,6 +60,7 @@ unsetopt correct_all
 
 source ~/.zsh/init
 
+
 # remove duplicate entries from $PATH and $FPATH
 typeset -U PATH
 typeset -U FPATH

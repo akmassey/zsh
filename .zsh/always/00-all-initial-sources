@@ -54,6 +54,8 @@ export NVM_DIR="/Users/masseya/.nvm"
 # TODO: Convert these to functions?
 source $HOME/.zsh/always/se-aliases/se-aliases.sh
 
+if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then source $HOME/perl5/perlbrew/etc/bashrc; fi
+
 # load rust settings
 if [ -d $HOME/.cargo ] && [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
 

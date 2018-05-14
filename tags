@@ -1,0 +1,197 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ALL_TARGETS	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^ALL_TARGETS := \\$/;"	m
+HEADER_FILES	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^HEADER_FILES := \\$/;"	m
+OH_MY_ZSH_LINK_TARGET	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^OH_MY_ZSH_LINK_TARGET := zsh-autosuggestions.plugin.zsh$/;"	m
+PLUGIN_TARGET	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^PLUGIN_TARGET := zsh-autosuggestions.zsh$/;"	m
+SHUNIT2	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^SHUNIT2 := $(VENDOR_DIR)\/shunit2\/2.1.6$/;"	m
+SRC_DIR	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^SRC_DIR    := .\/src$/;"	m
+SRC_FILES	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^SRC_FILES := \\$/;"	m
+STUB_SH	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^STUB_SH := $(VENDOR_DIR)\/stub.sh\/stub.sh$/;"	m
+TEST_DIR	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^TEST_DIR   := .\/script$/;"	m
+TEST_FILES	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^TEST_FILES := \\$/;"	m
+TEST_PREREQS	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^TEST_PREREQS := \\$/;"	m
+VENDOR_DIR	.zsh_custom/plugins/zsh-autosuggestions/Makefile	/^VENDOR_DIR := .\/vendor$/;"	m
+__fzfz	.zsh_custom/plugins/fzf-z/fzf-z.plugin.zsh	/^__fzfz() {$/;"	f
+_completemarks	.zsh_custom/plugins/jump/jump.plugin.zsh	/^_completemarks() {$/;"	f
+_current_epoch	.zsh/init	/^function _current_epoch() {$/;"	f
+_fzf_compgen_dir	.zsh/fzf.zsh	/^  _fzf_compgen_dir() {$/;"	f
+_fzf_compgen_path	.zsh/fzf.zsh	/^  _fzf_compgen_path() {$/;"	f
+_mark_expansion	.zsh_custom/plugins/jump/jump.plugin.zsh	/^_mark_expansion() {$/;"	f
+_prompt_for_dailies	.zsh/init	/^function _prompt_for_dailies() {$/;"	f
+_prompt_for_monthlies	.zsh/init	/^function _prompt_for_monthlies() {$/;"	f
+_prompt_for_weeklies	.zsh/init	/^function _prompt_for_weeklies() {$/;"	f
+_run_locked_scripts	.zsh/init	/^function _run_locked_scripts() {$/;"	f
+_run_scripts	.zsh/init	/^function _run_scripts() {$/;"	f
+_update_last_daily	.zsh/init	/^function _update_last_daily() {$/;"	f
+_update_last_monthly	.zsh/init	/^function _update_last_monthly() {$/;"	f
+_update_last_weekly	.zsh/init	/^function _update_last_weekly() {$/;"	f
+_zsh_autosuggest_accept	.zsh_custom/plugins/zsh-autosuggestions/src/widgets.zsh	/^_zsh_autosuggest_accept() {$/;"	f
+_zsh_autosuggest_accept	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_accept() {$/;"	f
+_zsh_autosuggest_accept	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_accept() {$/;"	f
+_zsh_autosuggest_bind_widget	.zsh_custom/plugins/zsh-autosuggestions/src/bind.zsh	/^_zsh_autosuggest_bind_widget() {$/;"	f
+_zsh_autosuggest_bind_widget	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_bind_widget() {$/;"	f
+_zsh_autosuggest_bind_widget	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_bind_widget() {$/;"	f
+_zsh_autosuggest_bind_widgets	.zsh_custom/plugins/zsh-autosuggestions/src/bind.zsh	/^_zsh_autosuggest_bind_widgets() {$/;"	f
+_zsh_autosuggest_bind_widgets	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_bind_widgets() {$/;"	f
+_zsh_autosuggest_bind_widgets	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_bind_widgets() {$/;"	f
+_zsh_autosuggest_check_deprecated_config	.zsh_custom/plugins/zsh-autosuggestions/src/deprecated.zsh	/^_zsh_autosuggest_check_deprecated_config() {$/;"	f
+_zsh_autosuggest_check_deprecated_config	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_check_deprecated_config() {$/;"	f
+_zsh_autosuggest_check_deprecated_config	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_check_deprecated_config() {$/;"	f
+_zsh_autosuggest_clear	.zsh_custom/plugins/zsh-autosuggestions/src/widgets.zsh	/^_zsh_autosuggest_clear() {$/;"	f
+_zsh_autosuggest_clear	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_clear() {$/;"	f
+_zsh_autosuggest_clear	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_clear() {$/;"	f
+_zsh_autosuggest_deprecated_start_widget	.zsh_custom/plugins/zsh-autosuggestions/src/deprecated.zsh	/^_zsh_autosuggest_deprecated_start_widget() {$/;"	f
+_zsh_autosuggest_deprecated_start_widget	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_deprecated_start_widget() {$/;"	f
+_zsh_autosuggest_deprecated_start_widget	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_deprecated_start_widget() {$/;"	f
+_zsh_autosuggest_deprecated_warning	.zsh_custom/plugins/zsh-autosuggestions/src/deprecated.zsh	/^_zsh_autosuggest_deprecated_warning() {$/;"	f
+_zsh_autosuggest_deprecated_warning	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_deprecated_warning() {$/;"	f
+_zsh_autosuggest_deprecated_warning	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_deprecated_warning() {$/;"	f
+_zsh_autosuggest_escape_command	.zsh_custom/plugins/zsh-autosuggestions/src/suggestion.zsh	/^_zsh_autosuggest_escape_command() {$/;"	f
+_zsh_autosuggest_escape_command	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_escape_command() {$/;"	f
+_zsh_autosuggest_escape_command	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_escape_command() {$/;"	f
+_zsh_autosuggest_execute	.zsh_custom/plugins/zsh-autosuggestions/src/widgets.zsh	/^_zsh_autosuggest_execute() {$/;"	f
+_zsh_autosuggest_execute	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_execute() {$/;"	f
+_zsh_autosuggest_execute	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_execute() {$/;"	f
+_zsh_autosuggest_highlight_apply	.zsh_custom/plugins/zsh-autosuggestions/src/highlight.zsh	/^_zsh_autosuggest_highlight_apply() {$/;"	f
+_zsh_autosuggest_highlight_apply	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_highlight_apply() {$/;"	f
+_zsh_autosuggest_highlight_apply	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_highlight_apply() {$/;"	f
+_zsh_autosuggest_highlight_reset	.zsh_custom/plugins/zsh-autosuggestions/src/highlight.zsh	/^_zsh_autosuggest_highlight_reset() {$/;"	f
+_zsh_autosuggest_highlight_reset	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_highlight_reset() {$/;"	f
+_zsh_autosuggest_highlight_reset	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_highlight_reset() {$/;"	f
+_zsh_autosuggest_invoke_original_widget	.zsh_custom/plugins/zsh-autosuggestions/src/bind.zsh	/^_zsh_autosuggest_invoke_original_widget() {$/;"	f
+_zsh_autosuggest_invoke_original_widget	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_invoke_original_widget() {$/;"	f
+_zsh_autosuggest_invoke_original_widget	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_invoke_original_widget() {$/;"	f
+_zsh_autosuggest_modify	.zsh_custom/plugins/zsh-autosuggestions/src/widgets.zsh	/^_zsh_autosuggest_modify() {$/;"	f
+_zsh_autosuggest_modify	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_modify() {$/;"	f
+_zsh_autosuggest_modify	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_modify() {$/;"	f
+_zsh_autosuggest_partial_accept	.zsh_custom/plugins/zsh-autosuggestions/src/widgets.zsh	/^_zsh_autosuggest_partial_accept() {$/;"	f
+_zsh_autosuggest_partial_accept	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_partial_accept() {$/;"	f
+_zsh_autosuggest_partial_accept	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_partial_accept() {$/;"	f
+_zsh_autosuggest_prev_command	.zsh_custom/plugins/zsh-autosuggestions/src/suggestion.zsh	/^_zsh_autosuggest_prev_command() {$/;"	f
+_zsh_autosuggest_prev_command	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_prev_command() {$/;"	f
+_zsh_autosuggest_prev_command	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_prev_command() {$/;"	f
+_zsh_autosuggest_start	.zsh_custom/plugins/zsh-autosuggestions/src/start.zsh	/^_zsh_autosuggest_start() {$/;"	f
+_zsh_autosuggest_start	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_start() {$/;"	f
+_zsh_autosuggest_start	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_start() {$/;"	f
+_zsh_autosuggest_strategy_default	.zsh_custom/plugins/zsh-autosuggestions/src/strategies/default.zsh	/^_zsh_autosuggest_strategy_default() {$/;"	f
+_zsh_autosuggest_strategy_default	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_strategy_default() {$/;"	f
+_zsh_autosuggest_strategy_default	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_strategy_default() {$/;"	f
+_zsh_autosuggest_strategy_match_prev_cmd	.zsh_custom/plugins/zsh-autosuggestions/src/strategies/match_prev_cmd.zsh	/^_zsh_autosuggest_strategy_match_prev_cmd() {$/;"	f
+_zsh_autosuggest_strategy_match_prev_cmd	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_strategy_match_prev_cmd() {$/;"	f
+_zsh_autosuggest_strategy_match_prev_cmd	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_strategy_match_prev_cmd() {$/;"	f
+_zsh_autosuggest_suggestion	.zsh_custom/plugins/zsh-autosuggestions/src/suggestion.zsh	/^_zsh_autosuggest_suggestion() {$/;"	f
+_zsh_autosuggest_suggestion	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh	/^_zsh_autosuggest_suggestion() {$/;"	f
+_zsh_autosuggest_suggestion	.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh	/^_zsh_autosuggest_suggestion() {$/;"	f
+abspath	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+amazon	.zsh/always/se-aliases/se-aliases.sh	/^amazon()$/;"	f
+anb	.zsh/always/se-aliases/se-aliases.sh	/^anb()$/;"	f
+archiveorg	.zsh/always/se-aliases/se-aliases.sh	/^archiveorg()$/;"	f
+assertSuggestion	.zsh_custom/plugins/zsh-autosuggestions/test/test_helper.zsh	/^assertSuggestion() {$/;"	f
+basename	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+bn	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+bookfinder	.zsh/always/se-aliases/se-aliases.sh	/^bookfinder()$/;"	f
+books	.zsh/always/se-aliases/se-aliases.sh	/^books()$/;"	f
+ccel	.zsh/always/se-aliases/se-aliases.sh	/^ccel()$/;"	f
+clio	.zsh/always/se-aliases/se-aliases.sh	/^clio()$/;"	f
+cmd	.zsh_custom/plugins/zsh-completions/src/_setup.py	/^    cmd="${${_setuppy_cmds[(r)$words[1]:*]%%:*}:-${(k)_setuppy_syns[(r)(*:|)$words[1](:*|)]}}"$/;"	v
+cnet	.zsh/always/se-aliases/se-aliases.sh	/^cnet()$/;"	f
+commands	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^    commands=($commands$/;"	v
+commands	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^  commands=($/;"	v
+curcontext	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^    curcontext="${curcontext%:*:*}:managepy-$words[1]:"$/;"	v
+curcontext	.zsh_custom/plugins/zsh-completions/src/_setup.py	/^      curcontext="${curcontext%:*:*}:setuppy-${cmd}:"$/;"	v
+curdir	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+dhqa	.zsh/always/se-aliases/se-aliases.sh	/^dhqa()$/;"	f
+docsouth	.zsh/always/se-aliases/se-aliases.sh	/^docsouth()$/;"	f
+ebsco	.zsh/always/se-aliases/se-aliases.sh	/^ebsco()$/;"	f
+english	.zsh/always/se-aliases/se-aliases.sh	/^english()$/;"	f
+esv	.zsh/always/se-aliases/se-aliases.sh	/^esv()$/;"	f
+fcgi_opts	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^  fcgi_opts=($/;"	v
+flickr	.zsh/always/se-aliases/se-aliases.sh	/^flickr()$/;"	f
+header	.zsh_custom/plugins/zsh-autosuggestions/script/test_runner.zsh	/^header() {$/;"	f
+hoogle	.zsh/always/se-aliases/se-aliases.sh	/^hoogle()$/;"	f
+hotx	.zsh/always/se-aliases/se-aliases.sh	/^hotx()$/;"	f
+images	.zsh/always/se-aliases/se-aliases.sh	/^images()$/;"	f
+imdb	.zsh/always/se-aliases/se-aliases.sh	/^imdb()$/;"	f
+jstor	.zsh/always/se-aliases/se-aliases.sh	/^jstor()$/;"	f
+jump	.zsh_custom/plugins/jump/jump.plugin.zsh	/^jump() {$/;"	f
+lcongress	.zsh/always/se-aliases/se-aliases.sh	/^lcongress()$/;"	f
+mark	.zsh_custom/plugins/jump/jump.plugin.zsh	/^mark() {$/;"	f
+marks	.zsh_custom/plugins/jump/jump.plugin.zsh	/^marks() {$/;"	f
+nerdquery	.zsh/always/se-aliases/se-aliases.sh	/^nerdquery()$/;"	f
+nul_args	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^  nul_args=($/;"	v
+oed	.zsh/always/se-aliases/se-aliases.sh	/^oed()$/;"	f
+oneTimeSetUp	.zsh_custom/plugins/zsh-autosuggestions/test/highlight_test.zsh	/^oneTimeSetUp() {$/;"	f
+oneTimeSetUp	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^oneTimeSetUp() {$/;"	f
+oneTimeSetUp	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^oneTimeSetUp() {$/;"	f
+oneTimeSetUp	.zsh_custom/plugins/zsh-autosuggestions/test/suggestion_test.zsh	/^oneTimeSetUp() {$/;"	f
+oneTimeSetUp	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/accept_test.zsh	/^oneTimeSetUp() {$/;"	f
+oneTimeSetUp	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/clear_test.zsh	/^oneTimeSetUp() {$/;"	f
+oneTimeSetUp	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/modify_test.zsh	/^oneTimeSetUp() {$/;"	f
+oneTimeSetUp	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/partial_accept_test.zsh	/^oneTimeSetUp() {$/;"	f
+onelook	.zsh/always/se-aliases/se-aliases.sh	/^onelook()$/;"	f
+op	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+os	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+pins	.zsh/always/se-aliases/se-aliases.sh	/^pins()$/;"	f
+poth	.zsh/always/se-aliases/se-aliases.sh	/^poth()$/;"	f
+profhacker	.zsh/always/se-aliases/se-aliases.sh	/^profhacker()$/;"	f
+r	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+re	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+run_tests	.zsh_custom/plugins/zsh-autosuggestions/test/test_helper.zsh	/^run_tests() {$/;"	f
+scholar	.zsh/always/se-aliases/se-aliases.sh	/^scholar()$/;"	f
+seoptions	.zsh/always/se-aliases/se-aliases.sh	/^seoptions()$/;"	f
+set_history	.zsh_custom/plugins/zsh-autosuggestions/test/test_helper.zsh	/^set_history() {$/;"	f
+settings	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+seusage	.zsh/always/se-aliases/se-aliases.sh	/^seusage() {$/;"	f
+source_autosuggestions	.zsh_custom/plugins/zsh-autosuggestions/test/test_helper.zsh	/^source_autosuggestions() {$/;"	f
+spanish	.zsh/always/se-aliases/se-aliases.sh	/^spanish()$/;"	f
+stackoverflow	.zsh/always/se-aliases/se-aliases.sh	/^stackoverflow()$/;"	f
+stdout	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+str	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+sub	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+superuser	.zsh/always/se-aliases/se-aliases.sh	/^superuser()$/;"	f
+sys	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i
+testBackslash	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^testBackslash() {$/;"	f
+testBackslash	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testBackslash() {$/;"	f
+testBasicMatches	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^testBasicMatches() {$/;"	f
+testBasicMatches	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testBasicMatches() {$/;"	f
+testClear	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/clear_test.zsh	/^testClear() {$/;"	f
+testCursorAtEnd	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/accept_test.zsh	/^testCursorAtEnd() {$/;"	f
+testCursorMovesOutOfBuffer	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/partial_accept_test.zsh	/^testCursorMovesOutOfBuffer() {$/;"	f
+testCursorNotAtEnd	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/accept_test.zsh	/^testCursorNotAtEnd() {$/;"	f
+testCursorStaysInBuffer	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/partial_accept_test.zsh	/^testCursorStaysInBuffer() {$/;"	f
+testDoubleBackslash	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^testDoubleBackslash() {$/;"	f
+testDoubleBackslash	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testDoubleBackslash() {$/;"	f
+testEscapeCommand	.zsh_custom/plugins/zsh-autosuggestions/test/suggestion_test.zsh	/^testEscapeCommand() {$/;"	f
+testHighlightApplyWithSuggestion	.zsh_custom/plugins/zsh-autosuggestions/test/highlight_test.zsh	/^testHighlightApplyWithSuggestion() {$/;"	f
+testHighlightApplyWithoutSuggestion	.zsh_custom/plugins/zsh-autosuggestions/test/highlight_test.zsh	/^testHighlightApplyWithoutSuggestion() {$/;"	f
+testHighlightDefaultStyle	.zsh_custom/plugins/zsh-autosuggestions/test/highlight_test.zsh	/^testHighlightDefaultStyle() {$/;"	f
+testHighlightReset	.zsh_custom/plugins/zsh-autosuggestions/test/highlight_test.zsh	/^testHighlightReset() {$/;"	f
+testMatchMostRecentAfterPreviousCmd	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testMatchMostRecentAfterPreviousCmd() {$/;"	f
+testModify	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/modify_test.zsh	/^testModify() {$/;"	f
+testMostRecentMatch	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^testMostRecentMatch() {$/;"	f
+testMostRecentMatch	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testMostRecentMatch() {$/;"	f
+testNoMatch	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^testNoMatch() {$/;"	f
+testNoMatch	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testNoMatch() {$/;"	f
+testParentheses	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^testParentheses() {$/;"	f
+testParentheses	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testParentheses() {$/;"	f
+testPrevCommand	.zsh_custom/plugins/zsh-autosuggestions/test/suggestion_test.zsh	/^testPrevCommand() {$/;"	f
+testSquareBrackets	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^testSquareBrackets() {$/;"	f
+testSquareBrackets	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testSquareBrackets() {$/;"	f
+testTilde	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/default_test.zsh	/^testTilde() {$/;"	f
+testTilde	.zsh_custom/plugins/zsh-autosuggestions/test/strategies/match_prev_cmd_test.zsh	/^testTilde() {$/;"	f
+testViCursorAtEnd	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/accept_test.zsh	/^testViCursorAtEnd() {$/;"	f
+testViCursorNotAtEnd	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/accept_test.zsh	/^testViCursorNotAtEnd() {$/;"	f
+testWidget	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/accept_test.zsh	/^testWidget() {$/;"	f
+testWidget	.zsh_custom/plugins/zsh-autosuggestions/test/widgets/clear_test.zsh	/^testWidget() {$/;"	f
+umbcdir	.zsh/always/se-aliases/se-aliases.sh	/^umbcdir()$/;"	f
+unmark	.zsh_custom/plugins/jump/jump.plugin.zsh	/^unmark() {$/;"	f
+vod	.zsh/always/se-aliases/se-aliases.sh	/^vod()$/;"	f
+wikipedia	.zsh/always/se-aliases/se-aliases.sh	/^wikipedia()$/;"	f
+wordpress	.zsh/always/se-aliases/se-aliases.sh	/^wordpress()$/;"	f
+worldcat	.zsh/always/se-aliases/se-aliases.sh	/^worldcat()$/;"	f
+write	.zsh_custom/plugins/zsh-completions/src/_manage.py	/^                                          .stdout.write(str(re.sub(r'^%s\\.(.*?)$' %$/;"	i

@@ -30,8 +30,26 @@ alias myfortune="fortune /Users/masseya/Documents/Fortunes/akm-quotes"
 # alias update-myfortune="strfile /Users/masseya/Documents/Fortunes/akm-quotes /Users/masseya/Documents/Fortunes/akm-quotes.dat"
 alias cl="clear"
 
-alias l="ls -l"
-alias lh="ls -lh"
+if test exa;
+then
+  alias l="exa -l --group-directories-first --git" # show git status by default
+  alias lh="exa -l"
+  alias ll="exa -l"
+  alias la="exa -la"
+  alias lg="exa -la --git-ignore --git" # ignore files in .gitignore
+  alias l.="exa -ld --git .*"  # list only dotfiles
+  alias lsf="find . -depth 1 -type f -exec exa -ld --git {} \;" # list only files
+  alias lsd="find . -depth 1 -type d -exec exa -ld --git {} \;"             # list only directories
+  alias lt="exa -ls=newest --group-directories-first --git" # list sorted by timestamp (oldest to newest)
+else
+  alias l="ls -l"
+  alias lh="ls -lh"
+  alias l.="ls -lGd .*"             # list only dotfiles
+  alias lsf="find . -depth 1 -type f -exec ls -ld {} \;" # list only files
+  alias lsd="find . -depth 1 -type d -exec ls -ld {} \;"             # list only directories
+  alias lt="ls -lthGr" # show recently modified files
+fi
+
 alias t="timetrap"
 alias recall="history | grep --color"
 alias pg="ps aux | grep --color"
@@ -51,13 +69,6 @@ alias k='wd'
 # shortcut for youtube-dl
 alias yt='youtube-dl'
 
-# list only dotfiles
-alias l.='ls -lGd .*'
-# list only files
-alias lsf="ls -l | egrep -v '^d'"
-# list only directories
-alias lsd="ls -ld */"
-
 # use color with grep
 alias grep='grep --color=auto'
 
@@ -71,9 +82,6 @@ alias console='tail -40 -f /var/log/system.log'
 # alias firefox="open -a Firefox"
 # alias safari="open -a Safari"
 # alias bibdesk="open -a BibDesk"
-
-# show recently modified files
-alias lt="ls -lthGr"
 
 # show / hide hidden files in the Mac OS X Finder
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles True; killall Finder'

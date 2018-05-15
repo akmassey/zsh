@@ -30,6 +30,7 @@ alias myfortune="fortune /Users/masseya/Documents/Fortunes/akm-quotes"
 # alias update-myfortune="strfile /Users/masseya/Documents/Fortunes/akm-quotes /Users/masseya/Documents/Fortunes/akm-quotes.dat"
 alias cl="clear"
 
+# More info: https://github.com/ogham/exa
 if test exa;
 then
   alias ls="exa"
@@ -51,6 +52,7 @@ else
   alias lt="ls -lthGr" # show recently modified files
 fi
 
+# More info: https://github.com/sharkdp/bat
 if test bat;
 then
   alias cat="bat"

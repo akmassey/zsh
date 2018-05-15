@@ -51,6 +51,11 @@ else
   alias lt="ls -lthGr" # show recently modified files
 fi
 
+if test bat;
+then
+  alias cat="bat"
+fi
+
 alias t="timetrap"
 alias recall="history | grep --color"
 alias pg="ps aux | grep --color"

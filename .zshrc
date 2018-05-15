@@ -66,14 +66,14 @@ typeset -U PATH
 typeset -U FPATH
 
 # Print weather information
-if [[ -e $HOME/.weather ]]; then
-  cat $HOME/.weather
+if [[ -e $HOME/.weather && -x /bin/cat ]]; then
+  /bin/cat $HOME/.weather
   echo "\n"
 fi
 
 # Print stock quotes
-if [[ -e $HOME/.stocks ]]; then
-  cat $HOME/.stocks
+if [[ -e $HOME/.stocks && -x /bin/cat ]]; then
+  /bin/cat $HOME/.stocks
   echo "\n"
 fi
 

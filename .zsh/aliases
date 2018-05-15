@@ -32,6 +32,7 @@ alias cl="clear"
 
 if test exa;
 then
+  alias ls="exa"
   alias l="exa -l --group-directories-first --git" # show git status by default
   alias lh="exa -l"
   alias ll="exa -l"

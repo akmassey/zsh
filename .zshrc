@@ -77,6 +77,11 @@ if [[ -e $HOME/.stocks && -x /bin/cat ]]; then
   echo "\n"
 fi
 
+if [[ -x $HOME/bin/monitor-sites ]]; then
+  $HOME/bin/monitor-sites
+  echo "\n"
+fi
+
 # Print a quote
 if type fortune > /dev/null 2>/dev/null; then
   myfortune

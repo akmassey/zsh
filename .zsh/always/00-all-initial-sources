@@ -30,7 +30,9 @@ export GOPATH=$HOME/src/go
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"
 
 # ensure python refers to python2 rather than python3
-export PATH="/Users/masseya/python-bin:$PATH"
+export PATH="$HOME/python-bin:$PATH"
+
+[[ -d $HOME/Library/Python/3.7/bin ]] && export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 # colorized man pages
 man () {
@@ -48,7 +50,7 @@ command man "$@"
 # Avoid unnecessary paging in git
 export GIT_PAGER="less -FRXK"
 
-export NVM_DIR="/Users/masseya/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # TODO: Convert these to functions?

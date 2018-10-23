@@ -1,3 +1,6 @@
+# NOTE: this uses nvm to install node, and yarn is installed without
+# installing node via homebrew
+
 npm update npm -g
 
 if [ -d "$HOME/.nvm" ]; then
@@ -13,3 +16,5 @@ if [ -d "$HOME/.nvm" ]; then
 fi
 
 nvm install node
+
+yarn global upgrade

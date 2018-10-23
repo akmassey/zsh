@@ -1,3 +1,10 @@
+# Load Node and nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if command -v nvm > /dev/null; then
+  nvm use --delete-prefix default --silent
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.zsh_custom
@@ -36,6 +43,7 @@ if [ -x /usr/local/bin/keychain ]; then
   eval "$(keychain --eval --inherit any id_rsa)"
 fi
 
+
 fpath=( $HOME/.zsh/functions "${fpath[@]}" )
 autoload -Uz duck
 autoload -Uz cdf
@@ -57,13 +65,6 @@ unsetopt correct_all
 
 # Load fzf configuration
 [ -f ~/.zsh/fzf.zsh ] && source ~/.zsh/fzf.zsh
-
-# Load Node and nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-if command -v nvm > /dev/null; then
-  nvm use --delete-prefix default --silent
-fi
 
 source ~/.zsh/init
 

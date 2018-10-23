@@ -1,6 +1,3 @@
-brew upgrade node
-/usr/local/bin/npm update npm -g
-
 npm update npm -g
 
 if [ -d "$HOME/.nvm" ]; then

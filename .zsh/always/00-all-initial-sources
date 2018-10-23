@@ -56,9 +56,6 @@ command man "$@"
 # Avoid unnecessary paging in git
 export GIT_PAGER="less -FRXK"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # TODO: Convert these to functions?
 source $HOME/.zsh/always/se-aliases/se-aliases.sh
 

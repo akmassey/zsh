@@ -26,7 +26,7 @@ ZSH_THEME="akmassey"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras bundler brew brew-cask capistrano jump rbenv osx gem rails golang gpg-agent zsh-completions jupyter-completions history-substring-search zsh-autosuggestions web-search wd fzf-z rust cargo)
+plugins=(git git-extras bundler brew brew-cask capistrano jump rbenv osx gem rails golang gpg-agent zsh-completions jupyter-completions history-substring-search zsh-autosuggestions web-search wd fzf-z rust cargo node npm nvm)
 
 autoload -U compinit && compinit -D
 
@@ -57,6 +57,13 @@ unsetopt correct_all
 
 # Load fzf configuration
 [ -f ~/.zsh/fzf.zsh ] && source ~/.zsh/fzf.zsh
+
+# Load Node and nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if command -v nvm > /dev/null; then
+  nvm use --delete-prefix default --silent
+fi
 
 source ~/.zsh/init
 

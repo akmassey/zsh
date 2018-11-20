@@ -1,6 +1,8 @@
 echo "Updating zsh environment"
 pushd . > /dev/null
 
+upgrade_oh_my_zsh
+
 cd $HOME/dotfiles/zsh
 git pull origin master
 

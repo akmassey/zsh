@@ -19,12 +19,6 @@ export PDFVIEWER=/Applications/Skim.app/Contents/MacOS/Skim
 # ensure HTML Tidy uses your configuration file
 export HTML_TIDY=$HOME/.tidyrc
 
-# rbenv configuration
-export RBENV_ROOT=/usr/local/opt/rbenv
-if command -v rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # Settings for Go Programming
 # http://stackoverflow.com/questions/12843063/install-go-with-brew-and-running-the-gotour
 #export GOVERSION="1.1.2"
@@ -55,6 +49,13 @@ command man "$@"
 
 # Avoid unnecessary paging in git
 export GIT_PAGER="less -FRXK"
+
+# rbenv configuration
+# NOTE: we need this to appear after homebrew, python, etc...
+export RBENV_ROOT=/usr/local/opt/rbenv
+if command -v rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # TODO: Convert these to functions?
 source $HOME/.zsh/always/se-aliases/se-aliases.sh

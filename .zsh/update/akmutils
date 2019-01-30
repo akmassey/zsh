@@ -1,0 +1,7 @@
+echo "Updating akmutils"
+pushd . > /dev/null
+
+cd $HOME/src/akmutils
+git pull origin master
+
+popd > /dev/null

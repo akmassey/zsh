@@ -6,3 +6,4 @@ source $HOME/.zsh/update/akmutils
 source $HOME/.zsh/update/fortunes
 source $HOME/.zsh/update/vim
 source $HOME/.zsh/update/latex
+source $HOME/.zsh/update/rust

@@ -9,6 +9,10 @@ fi
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.zsh_custom
 
+# Ensure the proper version of zsh functions are in your $FPATH
+ZSH_V=$(zsh --version | cut -d ' ' -f 2)
+export FPATH="/usr/local/Cellar/zsh/$ZSH_V/share/zsh/functions:$FPATH"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each

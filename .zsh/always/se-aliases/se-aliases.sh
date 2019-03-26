@@ -2,8 +2,8 @@
 # by W. Caleb McDaniel and Lincoln Mullen, 2012
 
 # The idea for this was suggested by Lincoln Mullen's post on
-# configuring Chrome for specific search engines. I source this file 
-# in my bashrc, and then use DTerm or the Terminal to quickly search. 
+# configuring Chrome for specific search engines. I source this file
+# in my bashrc, and then use DTerm or the Terminal to quickly search.
 # This method makes Mullen's ideas browser-independent. Mullen also
 # suggested some changes to the functions that make these work in any
 # Unix environment too. Feel free to fork and use however you see fit.
@@ -17,14 +17,14 @@
 
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 
-# Your academic library probably has a proxy system. For example, to 
+# Your academic library probably has a proxy system. For example, to
 # access JSTOR through Brandeis University's libraries, the url
 #      http://www.jstor.org/
 # becomes http://www.jstor.org.resources.library.brandeis.edu/
-# Fill in the variable below with the value of your proxy. Using the 
+# Fill in the variable below with the value of your proxy. Using the
 # example above:
 #      myproxy='.resources.library.brandeis.edu'
-#  Then in the # search functions which you want to run through the 
+#  Then in the # search functions which you want to run through the
 #  library proxy, add the following:
 #     http://www.jstor.org$myproxy/
 # If you don't have a library proxy, leave the string empty:
@@ -35,11 +35,11 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 myproxy='.ezproxy.rice.edu'
 umbcproxy='https://proxy-bc.researchport.umd.edu/login?url='
 
-# Different OSes have different commands for opening a URL in a browser 
-# from a command line. Change the alias below to the proper command for 
-# your OS. The default 'open' works on Macs. On Ubuntu the command would 
-# be 'gnome-open' instead. You could also use this alias to change the 
-# browser that opened the URL. And if you wished to change the flags for 
+# Different OSes have different commands for opening a URL in a browser
+# from a command line. Change the alias below to the proper command for
+# your OS. The default 'open' works on Macs. On Ubuntu the command would
+# be 'gnome-open' instead. You could also use this alias to change the
+# browser that opened the URL. And if you wished to change the flags for
 # the open command, you could do it in one place by changing the alias.
 
 alias searchopen='open'
@@ -51,7 +51,7 @@ alias searchopen='open'
 # the location of this file on your computer.
 
 SEPATH=$HOME/.zsh/se-aliases/se-aliases.sh
-alias searchlist="awk '/^function/ {print \$2}' $SEPATH | sort" 
+alias searchlist="awk '/^function/ {print \$2}' $SEPATH | sort"
 
 # Use these at the command line by typing the function's name and the
 # query. Queries with more than one word should be enclosed in double
@@ -66,7 +66,7 @@ alias searchlist="awk '/^function/ {print \$2}' $SEPATH | sort"
 seusage() {
 cat << EOF
 
-By default, you are running a keyword search. 
+By default, you are running a keyword search.
 Some options may be available, depending on your search engine.
 
 Help:
@@ -104,7 +104,7 @@ seoptions()
       t)
         title=1
         ;;
-      i)  
+      i)
         interesting=1
         ;;
     esac;
@@ -209,17 +209,11 @@ hotx()
   searchopen "https://www.tshaonline.org/search/node/$(echo "${@: -1}" | sed 's/ /%20/g')"
 }
 
-poth()
-{
-  seoptions "$@"
-  searchopen "https://texashistory.unt.edu/search/?q=$(urlencode "${@: -1}")$(if [ -n "$oldfirst" ]; then echo "&sort=date_a";fi)$(if [ -n "$title" ]; then echo "&t=dc_title"; fi)"
-}
-
-stackoverflow()
-{
-  seoptions "$@"
-  searchopen "https://stackoverflow.com/search?q=$(urlencode "${@: -1}")"
-}
+# stackoverflow()
+# {
+#   seoptions "$@"
+#   searchopen "https://stackoverflow.com/search?q=$(urlencode "${@: -1}")"
+# }
 
 superuser()
 {
@@ -238,12 +232,6 @@ dhqa()
 {
     seoptions "$@"
     searchopen "https://digitalhumanities.org/answers/search.php?q=$(urlencode "${@:-1}")"
-}
-
-wikipedia()
-{
-  seoptions "$@"
-  searchopen "https://en.wikipedia.org/wiki/Special:Search?search=$(urlencode "${@: -1}")"
 }
 
 # Bookfinder for book price comparison

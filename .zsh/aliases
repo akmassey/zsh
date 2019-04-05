@@ -104,6 +104,7 @@ alias ql="qlmanage -p &>/dev/null"
 
 # ensure downloaded attachments go to the desktop
 alias mutt='cd ~/Desktop/ && mutt'
+alias neomutt='cd ~/Desktop/ && neomutt'
 
 # compile LaTeX documents automatically
 alias mklatex='latexmk -bibtex -pdf -pvc'

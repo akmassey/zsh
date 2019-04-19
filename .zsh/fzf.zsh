@@ -28,10 +28,18 @@ if which fzf > /dev/null 2>&1 && which rg > /dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --no-messages --glob "!.git/*"'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='
+  export FZF_DEFAULT_OPTS="
+  --multi
+  --height 40%
+  --preview-window='right'
   --color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
   --color info:183,prompt:110,spinner:107,pointer:167,marker:215
-  '
+  --bind='ctrl-y:execute-silent(echo {+} || pbcopy)'
+  --preview='/usr/local/bin/bat --style=numbers --color=always {}'
+  "
+  # TODO: the more complex version of this seems to be failing for some reason
+  # --preview='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (/usr/local/bin/bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300'
+  # "
 
   # Use rg (https://github.com/BurntSushi/ripgrep) instead of the default find
   # command for listing path candidates.

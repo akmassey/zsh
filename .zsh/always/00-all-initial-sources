@@ -29,6 +29,9 @@ export GOPATH=$HOME/src/go
 # ensure Homebrew is in your PATH
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"
 
+# sqlite3
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
 # ensure python refers to python2 rather than python3
 export PATH="$HOME/python-bin:$PATH"
 

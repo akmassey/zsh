@@ -37,7 +37,8 @@ ZSH_THEME="akmassey"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-completions zsh-autosuggestions zsh-syntax-highlighting git git-extras bundler brew capistrano jump rbenv osx gem rails golang gpg-agent jupyter-completions history-substring-search web-search wd fzf-z rust cargo)
+# Note: removed the following - zsh-autosuggestions zsh-syntax-highlighting
+plugins=(zsh-completions git git-extras bundler brew capistrano jump rbenv osx gem rails golang gpg-agent jupyter-completions history-substring-search web-search wd fzf-z rust cargo)
 
 autoload -U compinit && compinit -D
 

@@ -37,8 +37,7 @@ ZSH_THEME="akmassey"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Note: removed the following - zsh-autosuggestions zsh-syntax-highlighting
-plugins=(zsh-completions git git-extras bundler brew capistrano jump rbenv osx gem rails golang gpg-agent jupyter-completions history-substring-search web-search wd fzf-z rust cargo)
+plugins=(zsh-completions zsh-autosuggestions zsh-syntax-highlighting git git-extras bundler brew capistrano jump rbenv osx gem rails golang gpg-agent jupyter-completions history-substring-search web-search wd fzf-z rust cargo)
 
 autoload -U compinit && compinit -D
 
@@ -72,6 +71,9 @@ unsetopt correct_all
 [ -f ~/.zsh/fzf.zsh ] && source ~/.zsh/fzf.zsh
 
 source ~/.zsh/init
+
+# Needed at least temporarily to resolve a bug: https://github.com/zsh-users/zsh-autosuggestions/issues/422
+typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
 
 
 # remove duplicate entries from $PATH and $FPATH

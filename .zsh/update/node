@@ -1,6 +1,8 @@
 # NOTE: this uses nvm to install node, and yarn is installed without
 # installing node via homebrew
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | zsh
+
 npm update npm -g
 
 if [ -d "$HOME/.nvm" ]; then
@@ -16,5 +18,7 @@ if [ -d "$HOME/.nvm" ]; then
 fi
 
 nvm install node
+
+curl -o- -L https://yarnpkg.com/install.sh | bash
 
 yarn global upgrade

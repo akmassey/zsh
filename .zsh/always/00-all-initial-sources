@@ -32,6 +32,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"
 # sqlite3
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
+# curl, commented out because I'm not sure I need it
+# export PATH="/usr/local/opt/curl/bin:$PATH"
+
 # ensure python refers to python2 rather than python3
 export PATH="$HOME/python-bin:$PATH"
 

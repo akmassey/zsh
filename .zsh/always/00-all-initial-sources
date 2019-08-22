@@ -25,6 +25,10 @@ export HTML_TIDY=$HOME/.tidyrc
 #export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION
 #export GOPATH=$(brew --prefix)/Cellar/go/$GOVERSION/bin:$HOME/src/go
 export GOPATH=$HOME/src/go
+export GOBIN=$HOME/src/go/bin
+
+# ensure go binaries are in your path
+export PATH="$GOBIN:$PATH"
 
 # ensure Homebrew is in your PATH
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"

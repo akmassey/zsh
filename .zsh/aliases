@@ -140,6 +140,7 @@ alias woman='eg'
 
 alias reload='source ~/.zshrc'
 alias rl='source ~/.zshrc'
+alias tm='tmux -2'
 
 # check which headers are supported for a website
 alias header='curl -I'

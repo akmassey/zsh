@@ -83,3 +83,6 @@ if [ -d $HOME/.cargo ] && [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env;
 # load private configuration
 if [ -d $HOME/.private ]; then source ~/.private/*; fi
 
+# use a custom setting for the rupa/z plugin
+export _Z_DATA=$HOME/.zsh/z
+

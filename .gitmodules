@@ -10,3 +10,6 @@
 [submodule ".zsh_custom/plugins/fzf-z"]
 	path = .zsh_custom/plugins/fzf-z
 	url = git@github.com:andrewferrier/fzf-z.git
+[submodule ".zsh_custom/plugins/z"]
+	path = .zsh_custom/plugins/z
+	url = git@github.com:rupa/z.git

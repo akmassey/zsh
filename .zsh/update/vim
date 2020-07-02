@@ -11,4 +11,6 @@ stow --restow --ignore "README.md|LICENSE.md|.git|.gitmodules" --dir=$HOME/dotfi
 
 vim +PlugInstall +PlugClean +qall
 
+vim -c 'CocUpdateSync|q'
+
 popd > /dev/null

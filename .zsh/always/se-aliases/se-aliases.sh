@@ -59,9 +59,9 @@ alias searchlist="awk '/^function/ {print \$2}' $SEPATH | sort"
 #
 # E.g.
 #
-# scholar abolitionists
-# scholar "American abolitionists"
-# scholar "\"American abolitionists\""
+# umbc_scholar abolitionists
+# umbc_scholar "American abolitionists"
+# umbc_scholar "\"American abolitionists\""
 
 seusage() {
 cat << EOF
@@ -81,8 +81,8 @@ Note: Use backslash escapes for literal quotes.
 
 Examples:
 
-  scholar abolitionists
-  scholar "American abolitionists"
+  umbc_scholar abolitionists
+  umbc_scholar "American abolitionists"
   poth -td "\"Texas Republican\""
 EOF
 }
@@ -111,7 +111,7 @@ seoptions()
   done
 }
 
-scholar()
+umbc_scholar()
 {
   seoptions "$@"
   scholarsearch="https://scholar.google.com/scholar?hl=en&q=$(urlencode "${@: -1}")"

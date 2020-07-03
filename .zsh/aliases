@@ -42,14 +42,14 @@ then
   alias ll="exa -l"
   alias la="exa -la"
   alias lg="exa -la --git-ignore --git" # ignore files in .gitignore
-  alias l.="exa -ld --git .*"  # list only dotfiles
+  alias l.="exa -ld --git .*"           # list only dotfiles
   # commented out because they are slower than the alternatives below
   # alias lsf="find . -depth 1 -type f -exec exa -ld --git {} \;"  # list only files
   # alias lsd="find . -depth 1 -type d -exec exa -ld --git {} \;"  # list only directories
-  alias lsf="exa -l | grep -v ^d" # list only files
-  alias lsd="exa -l | grep ^d" # list only directories
+  alias lsf="exa -l | grep -v ^d"                                # list only files
+  alias lsd="exa -Dl"                                            # list only directories
   alias lsym="find . -depth 1 -type l -exec exa -ld --git {} \;" # list only symlinks
-  alias lt="exa -ls=newest --group-directories-first --git" # list sorted by timestamp (oldest to newest)
+  alias lt="exa -ls=newest --group-directories-first --git"      # list sorted by timestamp (oldest to newest)
 else
   alias l="ls -l"
   alias lh="ls -lh"

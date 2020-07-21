@@ -17,8 +17,12 @@ export FPATH="/usr/local/Cellar/zsh/$ZSH_V/share/zsh/functions:$FPATH"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="akmassey"
+ZSH_THEME="spaceship"
+# ZSH_THEME="akmassey"
 # ZSH_THEME="random"
+
+SPACESHIP_USER_SHOW="always"
+SPACESHIP_HOST_SHOW="always"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

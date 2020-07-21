@@ -1,3 +1,4 @@
+rustup self update
 rustup update
 cargo install cargo-update
 cargo install-update -a

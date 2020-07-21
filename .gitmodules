@@ -13,3 +13,6 @@
 [submodule ".zsh_custom/plugins/z"]
 	path = .zsh_custom/plugins/z
 	url = git@github.com:rupa/z.git
+[submodule ".zsh_custom/themes/spaceship-prompt"]
+	path = .zsh_custom/themes/spaceship-prompt
+	url = git@github.com:/denysdovhan/spaceship-prompt.git

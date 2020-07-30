@@ -41,7 +41,7 @@ SPACESHIP_HOST_SHOW="always"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-completions zsh-autosuggestions zsh-syntax-highlighting git git-extras bundler brew capistrano jump rbenv osx gem rails golang gpg-agent jupyter-completions history-substring-search web-search wd z fzf-z rust cargo)
+plugins=(zsh-completions zsh-autosuggestions zsh-syntax-highlighting git git-extras bundler brew capistrano fd rbenv osx gem rails golang gpg-agent jupyter-completions history-substring-search web-search wd z fzf-z rust cargo)
 
 autoload -U compinit && compinit -D
 
@@ -79,7 +79,6 @@ source ~/.zsh/init
 # Needed at least temporarily to resolve a bug: https://github.com/zsh-users/zsh-autosuggestions/issues/422
 typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
 
-
 # remove duplicate entries from $PATH and $FPATH
 typeset -U PATH
 typeset -U FPATH
@@ -105,11 +104,3 @@ fi
 if type fortune > /dev/null 2>/dev/null; then
   myfortune
 fi
-
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export PATH="/usr/local/opt/curl/bin:$PATH"

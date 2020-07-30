@@ -133,14 +133,6 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 # quickly grep for TODO, FIXME, etc...
 alias todo='grep -r -n -e TODO -e FIXME -e XXX -e OPTIMIZE -e AKM'
 
-# Faster Navigation with Marks, achieved through zsh "jump" plugin
-# http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
-alias j='jump'
-
-# Alias for the eg tool, which is like man, but a little bit more practical.
-# More info: https://github.com/srsudar/eg
-alias woman='eg'
-
 alias reload='source ~/.zshrc'
 alias rl='source ~/.zshrc'
 alias tm='tmux -2'
@@ -173,7 +165,7 @@ alias map="xargs -n1"
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl icanhazip.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -183,9 +175,6 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 # OS X has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
-# Get current external IP
-alias ip="curl icanhazip.com"
-
 # Remove all traces of git from a folder
 alias degit="find . -name '.git' -exec rm -rf {} \;"
 
@@ -193,3 +182,6 @@ alias degit="find . -name '.git' -exec rm -rf {} \;"
 if test wget; then
   alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 fi
+
+# Why not?
+alias yolo='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'

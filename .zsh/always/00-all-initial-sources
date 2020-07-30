@@ -37,7 +37,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # curl, commented out because I'm not sure I need it
-# export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # ensure python refers to python2 rather than python3
 export PATH="$HOME/python-bin:$PATH"
@@ -85,4 +85,18 @@ if [ -d $HOME/.private ]; then source ~/.private/*; fi
 
 # use a custom setting for the rupa/z plugin
 export _Z_DATA=$HOME/.zsh/z
+unalias z 2> /dev/null
+z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
+alias j=z
 
+# node version manager
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# yarn configuration
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# iterm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

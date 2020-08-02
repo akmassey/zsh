@@ -1,1 +1,2 @@
-brew update && brew upgrade && brew cleanup
+brew update && brew upgrade && brew cleanup && brew services cleanup
+brew services restart --all

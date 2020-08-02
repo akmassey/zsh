@@ -27,7 +27,8 @@ export FZF_COMPLETION_OPTS='+c -x'
 if which fzf > /dev/null 2>&1 && which rg > /dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --no-messages --glob "!.git/*"'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude '.git'"
+
   export FZF_DEFAULT_OPTS="
   --multi
   --height 40%
@@ -41,20 +42,22 @@ if which fzf > /dev/null 2>&1 && which rg > /dev/null 2>&1; then
   # --preview='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (/usr/local/bin/bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300'
   # "
 
-  # Use rg (https://github.com/BurntSushi/ripgrep) instead of the default find
+  # Use fd (https://github.com/sharkdp/fd) instead of the default find
   # command for listing path candidates.
-  # - The first argument to the function is the base path to start traversal
+  # - The first argument to the function ($1) is the base path to start traversal
   # - See the source code (completion.{bash,zsh}) for the details.
-  # - rg only lists files, so we use with-dir script to augment the output
   _fzf_compgen_path() {
-    rg --files "$1" | with-dir "$1"
+    fd --hidden --follow --exclude ".git" . "$1"
   }
 
-  # Use rg to generate the list for directory completion
+  # Use fd to generate the list for directory completion
   _fzf_compgen_dir() {
-    rg --files "$1" | only-dir "$1"
+    fd --type d --hidden --follow --exclude ".git" . "$1"
   }
 fi
+
+# replace CTRL-o with cd widget
+bindkey '^o' fzf-cd-widget
 
 # # TODO: create Ctrl-P shortcut for vim
 # #     See: http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
@@ -63,5 +66,4 @@ fi
 # }
 # zle -N execute_nvim_through_fzf
 # bindkey -M viins '^p' execute_nvim_through_fzf
-
 # bind -x '"\C-p": nvim $(fzf);'

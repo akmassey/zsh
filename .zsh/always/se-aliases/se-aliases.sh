@@ -28,7 +28,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 #  library proxy, add the following:
 #     http://www.jstor.org$myproxy/
 # If you don't have a library proxy, leave the string empty:
-# 	  myproxy=''
+#     myproxy=''
 # Even the searches which other users have provided will still work
 # without a proxy.
 

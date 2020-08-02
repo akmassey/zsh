@@ -68,9 +68,12 @@ fi
 alias t="timetrap"
 alias recall="history | grep --color"
 alias pg="ps aux | grep --color"
+alias map="xargs -n1"
+
+# Vim aliases
 alias vim="nvim"
 alias vanilla="vim -u NONE -N" # alias for vim without customization
-alias map="xargs -n1"
+alias v="fzf | nvim"
 
 # create an alias to pretty print homebrew dependencies
 alias homebrewdeps=brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done

@@ -9,3 +9,5 @@ git pull origin master
 stow --restow --ignore "README.md|LICENSE.md|.git|.gitmodules" --dir=$HOME/dotfiles --target=$HOME zsh
 
 popd > /dev/null
+
+tldr --update

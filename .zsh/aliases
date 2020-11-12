@@ -140,9 +140,6 @@ alias reload='source ~/.zshrc'
 alias rl='source ~/.zshrc'
 alias tm='tmux -2'
 
-# open books using book-finder and fzf
-alias bk='open -a Skim.app "$(book-finder | fzf)"'
-
 # check which headers are supported for a website
 alias header='curl -I'
 

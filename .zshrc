@@ -104,3 +104,5 @@ fi
 if type fortune > /dev/null 2>/dev/null; then
   myfortune
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

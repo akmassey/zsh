@@ -1,7 +1,7 @@
 # NOTE: this uses nvm to install node, and yarn is installed without
 # installing node via homebrew
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | zsh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 
 npm update npm -g
 

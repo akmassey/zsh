@@ -19,28 +19,24 @@ export PDFVIEWER=/Applications/Skim.app/Contents/MacOS/Skim
 # ensure HTML Tidy uses your configuration file
 export HTML_TIDY=$HOME/.tidyrc
 
-# Settings for Go Programming
-# http://stackoverflow.com/questions/12843063/install-go-with-brew-and-running-the-gotour
-#export GOVERSION="1.1.2"
-#export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION
-#export GOPATH=$(brew --prefix)/Cellar/go/$GOVERSION/bin:$HOME/src/go
-export GOPATH=$HOME/src/go
-export GOBIN=$HOME/src/go/bin
+# ensure Go is in yoru PATH
+[[ -d $HOME/src/go ]] && export GOPATH=$HOME/src/go
+[[ -d $HOME/src/go/bin ]] && export GOBIN=$HOME/src/go/bin
 
-# ensure go binaries are in your path
 export PATH="$GOBIN:$PATH"
 
 # ensure Homebrew is in your PATH
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"
+# export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"
+[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
 
 # sqlite3
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
+[[ -d /usr/local/opt/sqlite/bin ]] && export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # curl, commented out because I'm not sure I need it
-export PATH="/usr/local/opt/curl/bin:$PATH"
+[[ -d /usr/local/opt/curl/bin ]] && export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # ensure python refers to python2 rather than python3
-export PATH="$HOME/python-bin:$PATH"
+[[ -d $HOME/pyhton-bin ]] && export PATH="$HOME/python-bin:$PATH"
 
 [[ -d $HOME/Library/Python/3.7/bin ]] && export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
@@ -92,8 +88,15 @@ z() {
 }
 alias j=z
 
-# node version manager
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Load Node and nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if command -v nvm > /dev/null; then
+  nvm use --delete-prefix default --silent
+fi
+
+# node version manager (this loads nvm bash_completion)
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 # yarn configuration
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

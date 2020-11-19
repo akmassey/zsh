@@ -1,7 +1,7 @@
 # NOTE: this uses nvm to install node, and yarn is installed without
 # installing node via homebrew
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 
 npm update npm -g
 
@@ -19,6 +19,6 @@ fi
 
 nvm install node
 
-curl -o- -L https://yarnpkg.com/install.sh | bash
+yarn set version latest
 
 yarn global upgrade

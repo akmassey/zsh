@@ -126,6 +126,9 @@ alias f='open -a Finder ./'
 # identify 10 largest files in current directory
 alias ducks='du -cks *|sort -rn|head -11'
 
+# replace `top` with something more fun
+alias top='procs --sortd cpu --watch'
+
 # echos path items one line at a time.
 alias epath="echo $PATH | tr ':' '\n'"
 

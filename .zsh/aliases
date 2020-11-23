@@ -139,8 +139,9 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 # quickly grep for TODO, FIXME, etc...
 alias todo='grep -r -n -e TODO -e FIXME -e XXX -e OPTIMIZE -e AKM'
 
-alias reload='source ~/.zshrc'
-alias rl='source ~/.zshrc'
+alias reload='src'
+alias rl='src'
+
 alias tm='tmux -2'
 
 # check which headers are supported for a website
@@ -184,9 +185,14 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 # Remove all traces of git from a folder
 alias degit="find . -name '.git' -exec rm -rf {} \;"
 
-# simple alias for a network speedtest
+# Simple alias for a network speedtest
 if test wget; then
   alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+fi
+
+# Download a complete website.  Just provide a URL.
+if test wget; then
+  alias get-website="wget --random-wait -r -p -e robots=off -U mozilla"
 fi
 
 # Why not?

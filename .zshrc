@@ -83,6 +83,7 @@ plugins=(
   zsh-syntax-highlighting
   git
   git-extras
+  gitfast
   bundler
   brew
   fd
@@ -99,8 +100,11 @@ plugins=(
   z
   fzf-z
   rust
+  rustup
   cargo
   kubectl
+  xcode
+  zsh_reload
 )
 
 # source keychain prior to gpg-agent, which is done through a plugin

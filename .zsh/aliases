@@ -168,6 +168,9 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
 
+# Eject a connected CD or DVD from a SuperDrive on macOS
+alias eject='drutil eject external'
+
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 

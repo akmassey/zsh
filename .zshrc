@@ -166,5 +166,3 @@ fi
 if type fortune > /dev/null 2>/dev/null; then
   myfortune
 fi
-
-test -e /Users/masseya/.zsh/iterm2_shell_integration.zsh && source /Users/masseya/.zsh/iterm2_shell_integration.zsh || true

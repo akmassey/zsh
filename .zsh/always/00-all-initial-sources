@@ -17,7 +17,7 @@ fi;
 export PDFVIEWER=/Applications/Skim.app/Contents/MacOS/Skim
 
 # ensure HTML Tidy uses your configuration file
-export HTML_TIDY=$HOME/.tidyrc
+[[ -f $HOME/.tidyrc ]] && export HTML_TIDY=$HOME/.tidyrc
 
 # ensure Go is in yoru PATH
 [[ -d $HOME/src/go ]] && export GOPATH=$HOME/src/go
@@ -68,12 +68,9 @@ if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-# TODO: Convert these to functions?
-source $HOME/.zsh/always/se-aliases/se-aliases.sh
-
 if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then source $HOME/perl5/perlbrew/etc/bashrc; fi
 
-# load rust settings
+# load Rust settings
 if [ -d $HOME/.cargo ] && [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
 
 # load private configuration
@@ -102,4 +99,4 @@ fi
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # iterm2 integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true

@@ -72,6 +72,7 @@ alias map="xargs -n1"
 
 # Vim aliases
 alias vim="nvim"
+alias svim="nvim -u ~/.SpaceVim/vimrc"
 alias vanilla="vim -u NONE -N" # alias for vim without customization
 alias v="fzf | nvim"
 

@@ -105,6 +105,7 @@ plugins=(
   kubectl
   xcode
   zsh_reload
+  zsh-nvm
 )
 
 # source keychain prior to gpg-agent, which is done through a plugin

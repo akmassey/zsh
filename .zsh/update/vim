@@ -9,7 +9,10 @@ git pull origin master
 
 stow --restow --ignore "README.md|LICENSE.md|.git|.gitmodules" --dir=$HOME/dotfiles --target=$HOME vim
 
-vim +PlugInstall +PlugClean +qall
+vim +PlugUpgrade +qall
+vim +PlugInstall +qall
+vim +PlugUpdate +qall
+vim +PlugClean +qall
 
 vim -c 'CocUpdateSync|q'
 

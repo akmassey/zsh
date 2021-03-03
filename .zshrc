@@ -2,6 +2,9 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.zsh_custom
 
+# Uncomment to enable profiling
+# zmodload zsh/zprof
+
 # Ensure the proper version of zsh functions are in your $FPATH
 if [[ -d /usr/local/Cellar/zsh/5.8_1/share/zsh/functions ]]; then
   export FPATH="/usr/local/Cellar/zsh/5.8_1/share/zsh/functions:$FPATH"
@@ -77,6 +80,8 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
 plugins=(
   zsh-completions
   zsh-autosuggestions
@@ -91,7 +96,6 @@ plugins=(
   osx
   gem
   rails
-  capistrano
   golang
   gpg-agent
   jupyter-completions
@@ -106,6 +110,8 @@ plugins=(
   xcode
   zsh_reload
   zsh-nvm
+  npm
+  evalcache
 )
 
 # source keychain prior to gpg-agent, which is done through a plugin
@@ -159,7 +165,7 @@ if [[ -e $HOME/.stocks && -x /bin/cat ]]; then
 fi
 
 if [[ -x $HOME/bin/monitor-sites ]]; then
-  $HOME/bin/monitor-sites
+  /bin/cat $HOME/.monitored_sites
   echo "\n"
 fi
 
@@ -167,3 +173,9 @@ fi
 if type fortune > /dev/null 2>/dev/null; then
   myfortune
 fi
+
+# # Used to test shell load times
+# timezsh() {
+#   shell=${1-$SHELL}
+#   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+# }

@@ -65,7 +65,8 @@ fi
 # NOTE: we need this to appear after homebrew, python, etc...
 export RBENV_ROOT=/usr/local/opt/rbenv
 if command -v rbenv > /dev/null; then
-  eval "$(rbenv init -)"
+  # eval "$(rbenv init -)"
+  _evalcache rbenv init -
 fi
 
 if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then source $HOME/perl5/perlbrew/etc/bashrc; fi

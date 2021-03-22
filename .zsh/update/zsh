@@ -5,6 +5,7 @@ omz update
 
 cd $HOME/dotfiles/zsh
 git pull origin master
+git submodule sync --recursive
 
 stow --restow --ignore "README.md|LICENSE.md|.git|.gitmodules" --dir=$HOME/dotfiles --target=$HOME zsh
 

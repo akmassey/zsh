@@ -69,6 +69,12 @@ if command -v rbenv > /dev/null; then
   _evalcache rbenv init -
 fi
 
+# pyenv config
+if command -v pyenv 1>/dev/null 2>&1; then
+  # eval "$(pyenv init -)"
+  _evalcache pyenv init -
+fi
+
 if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then source $HOME/perl5/perlbrew/etc/bashrc; fi
 
 # load Rust settings

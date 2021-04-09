@@ -97,8 +97,6 @@ plugins=(
   rails
   golang
   gpg-agent
-  jupyter-completions
-  history-substring-search
   wd
   z
   fzf-z
@@ -115,6 +113,8 @@ plugins=(
 # to using in the future:
 #     xcode
 #     kubectl
+#     jupyter-completions
+#     history-substring-search
 
 # source keychain prior to gpg-agent, which is done through a plugin
 if [ -x /usr/local/bin/keychain ]; then

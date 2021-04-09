@@ -86,13 +86,12 @@ plugins=(
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
-  git
-  git-extras
   gitfast
   bundler
   brew
   fd
   rbenv
+  pyenv
   osx
   gem
   rails
@@ -106,13 +105,16 @@ plugins=(
   rust
   rustup
   cargo
-  kubectl
-  xcode
   zsh_reload
   zsh-nvm
   npm
   evalcache
 )
+
+# Here are some oh-my-zsh plugins that I used to use and may need to go back
+# to using in the future:
+#     xcode
+#     kubectl
 
 # source keychain prior to gpg-agent, which is done through a plugin
 if [ -x /usr/local/bin/keychain ]; then

@@ -1,3 +1,4 @@
+# you can use texdismgr to activate the yearly releases
 echo "Updating MacTex"
 sudo tlmgr update --self
 sudo tlmgr update --all

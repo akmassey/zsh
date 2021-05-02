@@ -22,3 +22,9 @@
 [submodule ".zsh_custom/plugins/evalcache"]
 	path = .zsh_custom/plugins/evalcache
 	url = https://github.com/mroth/evalcache
+[submodule ".zsh_custom/plugins/fast-syntax-highlighting"]
+	path = .zsh_custom/plugins/fast-syntax-highlighting
+	url = git@github.com:zdharma/fast-syntax-highlighting.git
+[submodule ".zsh_custom/plugins/youtube-dl"]
+	path = .zsh_custom/plugins/youtube-dl
+	url = https://github.com/katrinleinweber/oh-my-zsh-youtube-dl-aliases

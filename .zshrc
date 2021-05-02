@@ -17,10 +17,10 @@ fi
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 
-SPACESHIP_USER_SHOW="always"
-SPACESHIP_HOST_SHOW="always"
+# SPACESHIP_USER_SHOW="always"
+# SPACESHIP_HOST_SHOW="always"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -85,7 +85,7 @@ export NVM_COMPLETION=true
 plugins=(
   zsh-completions
   zsh-autosuggestions
-  zsh-syntax-highlighting
+  fast-syntax-highlighting
   gitfast
   bundler
   brew
@@ -106,6 +106,7 @@ plugins=(
   zsh_reload
   zsh-nvm
   npm
+  youtube-dl
   evalcache
 )
 
@@ -135,7 +136,19 @@ autoload -Uz sizeup
 autoload -Uz o
 autoload -Uz getcertnames
 
-autoload -Uz compinit && compinit -D
+# Initialize the completion system
+autoload -Uz compinit
+
+# Cache completion if nothing changed - faster startup time
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
+
+# Enhanced form of menu completion called `menu selection'
+zmodload -i zsh/complist
 
 source $ZSH/oh-my-zsh.sh
 
@@ -175,6 +188,8 @@ fi
 if type fortune > /dev/null 2>/dev/null; then
   myfortune
 fi
+
+eval "$(starship init zsh)"
 
 # # Used to test shell load times
 # timezsh() {

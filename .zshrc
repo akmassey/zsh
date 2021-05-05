@@ -85,6 +85,7 @@ export NVM_COMPLETION=true
 plugins=(
   zsh-completions
   zsh-autosuggestions
+  zsh-interactive-cd
   fast-syntax-highlighting
   gitfast
   bundler

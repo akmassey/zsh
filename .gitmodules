@@ -28,3 +28,6 @@
 [submodule ".zsh_custom/plugins/youtube-dl"]
 	path = .zsh_custom/plugins/youtube-dl
 	url = https://github.com/katrinleinweber/oh-my-zsh-youtube-dl-aliases
+[submodule ".zsh_custom/plugins/zsh-interactive-cd"]
+	path = .zsh_custom/plugins/zsh-interactive-cd
+	url = git@github.com:changyuheng/zsh-interactive-cd.git

@@ -29,9 +29,6 @@ alias ttago='open ~/.ttag-logfile.txt'
 
 # aliases for custom fortune files
 alias myfortune="fortune /Users/masseya/Documents/Fortunes/akm-quotes"
-# removing the next one in favor of my update-myfortune ruby script
-# alias update-myfortune="strfile /Users/masseya/Documents/Fortunes/akm-quotes /Users/masseya/Documents/Fortunes/akm-quotes.dat"
-alias cl="clear"
 
 # More info: https://github.com/ogham/exa
 if test exa;
@@ -74,7 +71,7 @@ alias map="xargs -n1"
 alias vim="nvim"
 alias svim="nvim -u ~/.SpaceVim/vimrc"
 alias vanilla="vim -u NONE -N" # alias for vim without customization
-alias v="fzf | nvim"
+alias v='nvim $(fzf)'
 
 # create an alias to pretty print homebrew dependencies
 alias homebrewdeps=brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done

@@ -56,6 +56,11 @@ fi
 # replace CTRL-o with cd widget
 bindkey '^o' fzf-cd-widget
 
+# BibTeX Setup  More info: https://github.com/msprev/fzf-bibtex
+# ------------
+export FZF_BIBTEX_CACHEDIR="$HOME/.cache/fzf-bibtex"
+export FZF_BIBTEX_SOURCES="$HOME/Documents/Resume/akmassey-umbc-cv/bib/akm-publications.bib"
+
 # # TODO: create Ctrl-P shortcut for vim
 # #     See: http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
 # function execute_nvim_through_fzf {

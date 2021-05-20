@@ -54,7 +54,8 @@ command man "$@"
 # export MANPAGER="env MAN_PN=1 /usr/local/bin/vim -u NONE -N -M +MANPAGER -"
 
 # Avoid unnecessary paging in git
-export GIT_PAGER="less -FRXK"
+# export GIT_PAGER="less -FRXK"
+export GIT_PAGER="delta"
 
 # An input filter to allow less to display more than just plain text.  More
 # info here:  https://github.com/wofr06/lesspipe

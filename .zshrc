@@ -107,7 +107,6 @@ plugins=(
   zsh_reload
   zsh-nvm
   npm
-  youtube-dl
   evalcache
 )
 

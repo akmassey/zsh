@@ -22,6 +22,9 @@ zle -N accept-line _-accept-line
 # leaving it in here because I may use it at some point in the future.
 # unalias rails generate in favor of ripgrep
 # unalias rg
+# unalias rails runner alias in favor of the ruby filter for command line
+# arguments
+unalias ru
 
 # aliases for time tracking
 alias ttagcat='cat ~/.ttag-logfile.txt'

@@ -11,6 +11,7 @@ if [[ -d /usr/local/Cellar/zsh/5.8_1/share/zsh/functions ]]; then
 else
   ZSH_V=$(zsh --version | cut -d ' ' -f 2)
   export FPATH="/usr/local/Cellar/zsh/$ZSH_V/share/zsh/functions:$FPATH"
+  echo "Using zsh version: $ZSH_V"
 fi
 
 # Set name of the theme to load --- if set to "random", it will

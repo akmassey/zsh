@@ -1,4 +1,4 @@
-# Quickly find and open a pdf
+# Quickly find and open a pdf in or below the current directory.
 #
 # More info: https://github.com/bellecp/fast-p#installation-on-osx-with-homebrew
 function p() {

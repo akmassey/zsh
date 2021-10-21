@@ -35,11 +35,6 @@ export PATH="$GOBIN:$PATH"
 # curl, commented out because I'm not sure I need it
 [[ -d /usr/local/opt/curl/bin ]] && export PATH="/usr/local/opt/curl/bin:$PATH"
 
-# ensure python refers to python2 rather than python3
-[[ -d $HOME/pyhton-bin ]] && export PATH="$HOME/python-bin:$PATH"
-
-[[ -d $HOME/Library/Python/3.7/bin ]] && export PATH="$HOME/Library/Python/3.7/bin:$PATH"
-
 # colorized man pages
 man () {
 LESS_TERMCAP_mb=$'\e'"[1;31m" \
@@ -115,3 +110,11 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+# Created by `pipx` on 2021-05-26 22:17:51
+export PATH="/Users/masseya/.local/bin:$PATH"
+
+autoload -U bashcompinit
+bashcompinit
+
+eval "$(register-python-argcomplete pipx)"

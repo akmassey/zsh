@@ -94,6 +94,7 @@ plugins=(
   fd
   rbenv
   pyenv
+  poetry
   osx
   gem
   rails
@@ -135,6 +136,7 @@ autoload -Uz rule
 autoload -Uz rulem
 autoload -Uz sizeup
 autoload -Uz o
+autoload -Uz p
 autoload -Uz getcertnames
 
 # Initialize the completion system

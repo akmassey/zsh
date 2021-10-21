@@ -3,8 +3,6 @@
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
-npm update npm -g
-
 if [ -d "$HOME/.nvm" ]; then
     pushd . > /dev/null
 
@@ -20,6 +18,8 @@ fi
 nvm install node
 
 npm update yarn -g
+npm update npm -g
+npm update -g
 
 yarn set version latest
 

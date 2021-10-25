@@ -106,7 +106,6 @@ plugins=(
   rust
   rustup
   cargo
-  zsh_reload
   zsh-nvm
   npm
   evalcache

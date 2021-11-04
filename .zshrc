@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 # Path to your oh-my-zsh installation.
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.zsh_custom
@@ -84,6 +86,8 @@ DISABLE_AUTO_UPDATE="true"
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 plugins=(
+  evalcache
+  zsh-nvm
   zsh-completions
   zsh-autosuggestions
   zsh-interactive-cd
@@ -92,23 +96,21 @@ plugins=(
   bundler
   brew
   fd
-  rbenv
-  pyenv
+  # rbenv
+  # pyenv
   poetry
   osx
   gem
   rails
   golang
-  gpg-agent
+  # gpg-agent
   wd
   z
   fzf-z
   rust
-  rustup
-  cargo
-  zsh-nvm
+  # rustup
+  # cargo
   npm
-  evalcache
 )
 
 # Here are some oh-my-zsh plugins that I used to use and may need to go back
@@ -124,7 +126,6 @@ if [ -x /usr/local/bin/keychain ]; then
   eval "$(keychain --eval --inherit any id_rsa)"
 fi
 
-
 fpath=( $HOME/.zsh/functions "${fpath[@]}" )
 autoload -Uz duck
 autoload -Uz cdf
@@ -136,6 +137,7 @@ autoload -Uz rulem
 autoload -Uz sizeup
 autoload -Uz o
 autoload -Uz p
+autoload -Uz timezsh
 autoload -Uz getcertnames
 
 # Initialize the completion system
@@ -192,9 +194,3 @@ if type fortune > /dev/null 2>/dev/null; then
 fi
 
 eval "$(starship init zsh)"
-
-# # Used to test shell load times
-# timezsh() {
-#   shell=${1-$SHELL}
-#   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-# }

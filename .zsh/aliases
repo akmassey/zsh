@@ -143,8 +143,8 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 # quickly grep for TODO, FIXME, etc...
 alias todo='rg -e TODO -e FIXME -e XXX -e OPTIMIZE -e AKM'
 
-alias reload='src'
-alias rl='src'
+alias reload='omz reload'
+alias rl='omz reload'
 
 alias tm='tmux -2'
 

@@ -91,7 +91,6 @@ plugins=(
   zsh-completions
   zsh-autosuggestions
   zsh-interactive-cd
-  fast-syntax-highlighting
   gitfast
   bundler
   brew
@@ -99,7 +98,7 @@ plugins=(
   # rbenv
   # pyenv
   poetry
-  osx
+  macos
   gem
   rails
   golang

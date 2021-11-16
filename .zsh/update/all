@@ -1,7 +1,6 @@
 echo "Updating everything"
 
 source $HOME/.zsh/update/homebrew
-source $HOME/.zsh/update/zsh
 source $HOME/.zsh/update/akmutils
 source $HOME/.zsh/update/fortunes
 source $HOME/.zsh/update/vim

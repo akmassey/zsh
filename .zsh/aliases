@@ -24,7 +24,7 @@ zle -N accept-line _-accept-line
 # unalias rg
 # unalias rails runner alias in favor of the ruby filter for command line
 # arguments
-unalias ru
+# unalias ru
 
 # aliases for time tracking
 alias ttagcat='cat ~/.ttag-logfile.txt'

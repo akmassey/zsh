@@ -12,3 +12,5 @@ stow --restow --ignore "README.md|LICENSE.md|.git|.gitmodules" --dir=$HOME/dotfi
 popd > /dev/null
 
 tldr --update
+
+_evalcache_clear

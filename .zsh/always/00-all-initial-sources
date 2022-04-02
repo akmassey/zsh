@@ -118,3 +118,9 @@ autoload -U bashcompinit
 bashcompinit
 
 eval "$(register-python-argcomplete pipx)"
+
+# source nix
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+  echo "Loading nix profile..."
+  source ~/.nix-profile/etc/profile.d/nix.sh
+fi

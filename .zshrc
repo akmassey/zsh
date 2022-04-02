@@ -95,12 +95,12 @@ plugins=(
   bundler
   brew
   fd
-  # rbenv
-  # pyenv
-  poetry
+  rbenv
+  pyenv
+  # poetry
   macos
   gem
-  rails
+  # rails
   golang
   # gpg-agent
   wd
@@ -193,3 +193,6 @@ if type fortune > /dev/null 2>/dev/null; then
 fi
 
 eval "$(starship init zsh)"
+
+# Ensure the PATH environment variable is unique
+typeset -U PATH

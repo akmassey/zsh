@@ -31,3 +31,6 @@
 [submodule ".zsh_custom/plugins/zsh-interactive-cd"]
 	path = .zsh_custom/plugins/zsh-interactive-cd
 	url = git@github.com:changyuheng/zsh-interactive-cd.git
+[submodule ".zsh_custom/themes/powerlevel10k"]
+	path = .zsh_custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git

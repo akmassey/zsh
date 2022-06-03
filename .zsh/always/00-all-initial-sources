@@ -117,7 +117,9 @@ export PATH="/Users/masseya/.local/bin:$PATH"
 autoload -U bashcompinit
 bashcompinit
 
-eval "$(register-python-argcomplete pipx)"
+if [ -x register-python-argcomplete ]; then
+  eval "$(register-python-argcomplete pipx)"
+fi
 
 # source nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then

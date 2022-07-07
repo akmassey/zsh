@@ -207,3 +207,8 @@ alias g='git'
 
 # Why not?
 alias yolo='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
+
+# Lua aliases
+if [[ -e $HOME/.config/nvim/lua-language-server/3rd/luamake/luamake ]]; then
+  alias luamake=$HOME.config/nvim/lua-language-server/3rd/luamake/luamake
+fi

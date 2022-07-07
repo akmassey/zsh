@@ -1,4 +1,37 @@
-zmodload zsh/zprof
+# source keychain prior to anything
+if [ -x /usr/local/bin/keychain ]; then
+  # for Mac OS X only
+  eval "$(keychain --eval --inherit any id_rsa)"
+fi
+
+# Print weather information
+if [[ -e $HOME/.weather && -x /bin/cat ]]; then
+  /bin/cat $HOME/.weather
+  echo "\n"
+fi
+
+# Print stock quotes
+if [[ -e $HOME/.stocks && -x /bin/cat ]]; then
+  /bin/cat $HOME/.stocks
+  echo "\n"
+fi
+
+if [[ -x $HOME/bin/monitor-sites ]]; then
+  /bin/cat $HOME/.monitored_sites
+  echo "\n"
+fi
+
+# Print a quote
+if type fortune > /dev/null 2>/dev/null; then
+  fortune /Users/masseya/Documents/Fortunes/akm-quotes
+fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Path to your oh-my-zsh installation.
 ZSH=$HOME/.oh-my-zsh
@@ -13,7 +46,7 @@ if [[ -d /usr/local/Cellar/zsh/5.8_1/share/zsh/functions ]]; then
 else
   ZSH_V=$(zsh --version | cut -d ' ' -f 2)
   export FPATH="/usr/local/Cellar/zsh/$ZSH_V/share/zsh/functions:$FPATH"
-  echo "Using zsh version: $ZSH_V"
+  # echo "Using zsh version: $ZSH_V"
 fi
 
 # Set name of the theme to load --- if set to "random", it will
@@ -21,6 +54,7 @@ fi
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # SPACESHIP_USER_SHOW="always"
 # SPACESHIP_HOST_SHOW="always"
@@ -119,12 +153,6 @@ plugins=(
 #     jupyter-completions
 #     history-substring-search
 
-# source keychain prior to gpg-agent, which is done through a plugin
-if [ -x /usr/local/bin/keychain ]; then
-  # for Mac OS X only
-  eval "$(keychain --eval --inherit any id_rsa)"
-fi
-
 fpath=( $HOME/.zsh/functions "${fpath[@]}" )
 autoload -Uz duck
 autoload -Uz cdf
@@ -170,29 +198,11 @@ typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
 typeset -U PATH
 typeset -U FPATH
 
-# Print weather information
-if [[ -e $HOME/.weather && -x /bin/cat ]]; then
-  /bin/cat $HOME/.weather
-  echo "\n"
-fi
-
-# Print stock quotes
-if [[ -e $HOME/.stocks && -x /bin/cat ]]; then
-  /bin/cat $HOME/.stocks
-  echo "\n"
-fi
-
-if [[ -x $HOME/bin/monitor-sites ]]; then
-  /bin/cat $HOME/.monitored_sites
-  echo "\n"
-fi
-
-# Print a quote
-if type fortune > /dev/null 2>/dev/null; then
-  myfortune
-fi
-
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # Ensure the PATH environment variable is unique
 typeset -U PATH
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+

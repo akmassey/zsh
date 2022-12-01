@@ -64,7 +64,6 @@ fi
 
 # rbenv configuration
 # NOTE: we need this to appear after homebrew, python, etc...
-export RBENV_ROOT=/usr/local/opt/rbenv
 if command -v rbenv > /dev/null; then
   # eval "$(rbenv init -)"
   _evalcache rbenv init -

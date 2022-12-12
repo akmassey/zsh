@@ -31,7 +31,7 @@ alias ttagcat='cat ~/.ttag-logfile.txt'
 alias ttago='open ~/.ttag-logfile.txt'
 
 # aliases for custom fortune files
-alias myfortune="fortune /Users/masseya/Documents/Fortunes/akm-quotes"
+alias myfortune="fortune $HOME/Documents/Fortunes/akm-quotes"
 
 # More info: https://github.com/ogham/exa
 if test exa;

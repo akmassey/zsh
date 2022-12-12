@@ -23,7 +23,7 @@ fi
 
 # Print a quote
 if type fortune > /dev/null 2>/dev/null; then
-  fortune /Users/masseya/Documents/Fortunes/akm-quotes
+  fortune $HOME/Documents/Fortunes/akm-quotes
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.

@@ -1,5 +1,5 @@
 # source keychain prior to anything
-if [ -x /usr/local/bin/keychain ]; then
+if [ -x $HOMEBREW_PREFIX/bin/keychain ]; then
   # for Mac OS X only
   eval "$(keychain --eval --inherit any id_rsa)"
 fi
@@ -40,12 +40,14 @@ ZSH_CUSTOM=$HOME/.zsh_custom
 # Uncomment to enable profiling
 # zmodload zsh/zprof
 
+# TODO: install and setup Homebrew zsh
+
 # Ensure the proper version of zsh functions are in your $FPATH
-if [[ -d /usr/local/Cellar/zsh/5.8_1/share/zsh/functions ]]; then
-  export FPATH="/usr/local/Cellar/zsh/5.8_1/share/zsh/functions:$FPATH"
+if [[ -d $HOMEBREW_PREFIX/Cellar/zsh/5.8_1/share/zsh/functions ]]; then
+  export FPATH="$HOMEBREW_PREFIX/Cellar/zsh/5.8_1/share/zsh/functions:$FPATH"
 else
   ZSH_V=$(zsh --version | cut -d ' ' -f 2)
-  export FPATH="/usr/local/Cellar/zsh/$ZSH_V/share/zsh/functions:$FPATH"
+  export FPATH="$HOMEBREW_PREFIX/Cellar/zsh/$ZSH_V/share/zsh/functions:$FPATH"
   # echo "Using zsh version: $ZSH_V"
 fi
 

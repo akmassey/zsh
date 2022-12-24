@@ -1,23 +1,23 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="$PATH:/usr/local/opt/fzf/bin"
+if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+  export PATH="$PATH:/opt/homebrew/opt/fzf/bin"
 fi
 
 # Man path
 # --------
-if [[ ! "$MANPATH" == */usr/local/opt/fzf/man* && -d "/usr/local/opt/fzf/man" ]]; then
-  export MANPATH="$MANPATH:/usr/local/opt/fzf/man"
+if [[ ! "$MANPATH" == */opt/homebrew/opt/fzf/man* && -d "/opt/homebrew/opt/fzf/man" ]]; then
+  export MANPATH="$MANPATH:/opt/homebrew/opt/fzf/man"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-if [ -f /usr/local/opt/fzf/shell/key-bindings.zsh ]; then
-  source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+if [ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then
+  source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 fi
 
 # Options to fzf command
@@ -36,7 +36,7 @@ if which fzf > /dev/null 2>&1 && which rg > /dev/null 2>&1; then
   --color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
   --color info:183,prompt:110,spinner:107,pointer:167,marker:215
   --bind='ctrl-y:execute-silent(echo {+} || pbcopy)'
-  --preview='/usr/local/bin/lesspipe.sh {} | /usr/local/bin/bat --style=numbers --color=always'
+  --preview='/opt/homebrew/bin/lesspipe.sh {} | /opt/homebrew/bin/bat --style=numbers --color=always'
   "
 
   # Use fd (https://github.com/sharkdp/fd) instead of the default find

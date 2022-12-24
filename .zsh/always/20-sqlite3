@@ -13,6 +13,6 @@
 # For pkg-config to find sqlite you may need to set:
 #   export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
 
-if [[ -x /usr/local/opt/sqlite/bin/sqlite3 ]]; then
-  export PATH="/usr/local/opt/sqlite/bin:$PATH"
+if [[ -x "$(brew --prefix)/opt/sqlite/bin/sqlite3" ]]; then
+  export PATH="$(brew --prefix)/opt/sqlite/bin:$PATH"
 fi

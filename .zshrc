@@ -1,7 +1,7 @@
 # source keychain prior to anything
 if [ -x $HOMEBREW_PREFIX/bin/keychain ]; then
   # for Mac OS X only
-  eval "$(keychain --eval --inherit any id_rsa)"
+  eval "$(keychain --eval --inherit any id_rsa id_ed25519)"
 fi
 
 # Print weather information

@@ -5,7 +5,9 @@ if [ -f ~/.zsh/aliases ]; then source ~/.zsh/aliases; fi
 source ~/.zsh/functions/*
 
 # set your editor
-if [[ -f /usr/local/bin/nvim && -x /usr/local/bin/nvim ]]; then
+if [[ -f /opt/homebrew/bin/nvim && -x /opt/homebrew/bin/nvim ]]; then
+  export EDITOR=/opt/homebrew/bin/nvim
+elif [[ -f /usr/local/bin/nvim && -x /usr/local/bin/nvim ]]; then
   export EDITOR=/usr/local/bin/nvim
 elif [[ -f /usr/bin/nvim && -x /usr/bin/nvim ]]; then
   export EDITOR=/usr/bin/nvim
@@ -27,7 +29,7 @@ export PATH="$GOBIN:$PATH"
 
 # ensure Homebrew is in your PATH
 # export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:$PATH"
-[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
+[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
 # sqlite3
 [[ -d /usr/local/opt/sqlite/bin ]] && export PATH="/usr/local/opt/sqlite/bin:$PATH"
@@ -54,12 +56,12 @@ export GIT_PAGER="delta"
 
 # An input filter to allow less to display more than just plain text.  More
 # info here:  https://github.com/wofr06/lesspipe
-export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
+export LESSOPEN="|/opt/homebrew/bin/lesspipe.sh %s"
 export LESS="--mouse"
 
 # Source completions for git-extras
-if [[ -f /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh ]]; then
-  source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+if [[ -f /opt/homebrew/opt/git-extras/share/git-extras/git-extras-completion.zsh ]]; then
+  source /opt/homebrew/opt/git-extras/share/git-extras/git-extras-completion.zsh
 fi
 
 # rbenv configuration

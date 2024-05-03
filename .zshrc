@@ -203,3 +203,6 @@ export NVM_DIR="$HOME/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# zoxide init https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init --cmd cd zsh)"

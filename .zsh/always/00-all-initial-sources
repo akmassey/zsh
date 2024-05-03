@@ -87,12 +87,12 @@ if [ -d $HOME/.cargo ] && [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env;
 # load private configuration
 if [ -d $HOME/.private ]; then source ~/.private/*; fi
 
-# use a custom setting for the rupa/z plugin
+# use a custom setting for the agkozak/zsh-z plugin
 export _Z_DATA=$HOME/.zsh/z
 unalias z 2> /dev/null
 z() {
   [ $# -gt 0 ] && _z "$*" && return
-  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+  cd "$(zshz -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
 alias j=z
 

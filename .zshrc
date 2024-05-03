@@ -126,7 +126,7 @@ plugins=(
   zsh-nvm
   zsh-completions
   zsh-autosuggestions
-  zsh-interactive-cd
+  # zsh-interactive-cd
   gitfast
   bundler
   brew
@@ -140,8 +140,8 @@ plugins=(
   golang
   # gpg-agent
   wd
-  z
-  fzf-z
+  # z
+  # fzf-z
   rust
   # rustup
   # cargo
@@ -169,20 +169,6 @@ autoload -Uz p
 autoload -Uz timezsh
 autoload -Uz getcertnames
 
-# Initialize the completion system
-autoload -Uz compinit
-
-# Cache completion if nothing changed - faster startup time
-typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
-if [ $(date +'%j') != $updated_at ]; then
-  compinit -i
-else
-  compinit -C -i
-fi
-
-# Enhanced form of menu completion called `menu selection'
-zmodload -i zsh/complist
-
 source $ZSH/oh-my-zsh.sh
 
 # Starting to find autocorrect rather annoying...
@@ -199,8 +185,6 @@ typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
 # remove duplicate entries from $PATH and $FPATH
 typeset -U PATH
 typeset -U FPATH
-
-# eval "$(starship init zsh)"
 
 # Ensure the PATH environment variable is unique
 typeset -U PATH

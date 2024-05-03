@@ -1,3 +1,0 @@
-# TODO: check if you're using alacritty before just loading things into the
-# path
-fpath+=$HOME/.zsh/alacritty

@@ -74,7 +74,8 @@ alias map="xargs -n1"
 alias vim="nvim"
 alias svim="nvim -u ~/.SpaceVim/vimrc"
 alias vanilla="vim -u NONE -N" # alias for vim without customization
-alias v='nvim $(fzf)'
+alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim'  # edit a file in a git repo using fuzzy search
+# alias vimwiki='vim -c VimwikiIndex'
 
 # create an alias to pretty print homebrew dependencies
 alias homebrewdeps=brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done

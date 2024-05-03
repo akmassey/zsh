@@ -2,3 +2,4 @@ export PATH="/usr/local/opt/rbenv/shims:$HOME/bin:$HOME/src/go/bin:/usr/local/li
 
 export PARINIT="rTbgqR\\ B\\=.,\\?_A_a\\ Q\\=_s\\>\\|"
 
+. "$HOME/.cargo/env"

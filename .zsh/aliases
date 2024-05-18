@@ -71,7 +71,7 @@ alias pg="ps aux | grep --color"
 alias map="xargs -n1"
 
 # create a "jump" alias to cd faster
-alias j=cd
+alias k=cd
 
 # create an alias for rm to simply put things in the macOS trash
 if test trash;

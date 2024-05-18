@@ -76,7 +76,7 @@ alias j=cd
 # create an alias for rm to simply put things in the macOS trash
 if test trash;
 then
-  alias rm="echo 'Use `trash` rather than rm.  Or use /bin/rm if necessary.'"
+  alias rm="echo 'Use trash rather than rm.  Or use /bin/rm if necessary.'"
 fi
 
 # Vim aliases

@@ -93,11 +93,12 @@ fi
 #   echo "\n"
 # fi
 
-# Print stock quotes
-if [[ -e $HOME/.stocks && -x /bin/cat ]]; then
-  /bin/cat $HOME/.stocks
-  echo "\n"
-fi
+# TODO: Fix this
+# # Print stock quotes
+# if [[ -e $HOME/.stocks && -x /bin/cat ]]; then
+#   /bin/cat $HOME/.stocks
+#   echo "\n"
+# fi
 
 if [[ -x $HOME/bin/monitor-sites ]]; then
   /bin/cat $HOME/.monitored_sites

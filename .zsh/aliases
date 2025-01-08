@@ -70,9 +70,6 @@ alias recall="history | grep --color"
 alias pg="ps aux | grep --color"
 alias map="xargs -n1"
 
-# create a "jump" alias to cd faster
-alias k=cd
-
 # create an alias for rm to simply put things in the macOS trash
 if test trash;
 then
@@ -85,6 +82,21 @@ alias svim="nvim -u ~/.SpaceVim/vimrc"
 alias vanilla="vim -u NONE -N" # alias for vim without customization
 alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim'  # edit a file in a git repo using fuzzy search
 # alias vimwiki='vim -c VimwikiIndex'
+
+# Yazi function
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+
+
+# Python aliases
+alias python3.13 'uv run --python=3.13 python3'
+alias python3 python3.13
 
 # create an alias to pretty print homebrew dependencies
 alias homebrewdeps=brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done

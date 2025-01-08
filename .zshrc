@@ -38,7 +38,7 @@ zinit light lukechilds/zsh-nvm
 # Add in snippets
 zinit snippet OMZP::command-not-found
 #zinit snippet OMZP::fd
-zinit snippet OMZP::pyenv
+#zinit snippet OMZP::pyenv
 zinit snippet OMZP::rbenv
 zinit snippet OMZP::gem
 zinit snippet OMZP::bundler
@@ -216,13 +216,13 @@ if command -v rbenv > /dev/null; then
   _evalcache rbenv init -
 fi
 
-# pyenv config
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  # eval "$(pyenv init --path -)"
-  _evalcache pyenv init --path -
-fi
+# # pyenv config
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   export PYENV_ROOT="$HOME/.pyenv"
+#   export PATH="$PYENV_ROOT/bin:$PATH"
+#   # eval "$(pyenv init --path -)"
+#   _evalcache pyenv init --path -
+# fi
 
 # Perl brew
 if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then source $HOME/perl5/perlbrew/etc/bashrc; fi

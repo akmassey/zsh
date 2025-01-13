@@ -97,6 +97,7 @@ function y() {
 # Python aliases
 alias python3.13 'uv run --python=3.13 python3'
 alias python3 python3.13
+alias python python3.13
 
 # create an alias to pretty print homebrew dependencies
 alias homebrewdeps=brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done
